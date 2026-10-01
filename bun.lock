@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "@foliag/bloom",
+      "name": "@foliag/seeds",
       "dependencies": {
         "@foliag/zag": "^0.1.0",
         "@zag-js/accordion": "1.44.0",

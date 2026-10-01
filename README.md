@@ -1,15 +1,15 @@
-# @foliag/bloom
+# @foliag/seeds
 
 Unstyled Solid 2 components built on [Zag.js](https://zagjs.com) machines through
 [@foliag/zag](https://github.com/foli-ag/zag). They have the parts of [Ark UI](https://ark-ui.com), renamed as
-[NAMING.md](NAMING.md) describes. Bloom renders the markup, ARIA attributes and `data-*` state. The app styles it.
+[NAMING.md](NAMING.md) describes. Seeds renders the markup, ARIA attributes and `data-*` state. The app styles it.
 
 ```sh
-bun add @foliag/bloom
+bun add @foliag/seeds
 ```
 
 ```tsx
-import { Dialog } from "@foliag/bloom/dialog"
+import { Dialog } from "@foliag/seeds/dialog"
 
 <Dialog.Root>
   <Dialog.Trigger>Open</Dialog.Trigger>
@@ -36,9 +36,9 @@ hook, and a `Context` part that renders its children with the API.
 
 ## Components
 
-Each one is a subpath export, such as `@foliag/bloom/radio-group`, and the root entry re-exports them all.
+Each one is a subpath export, such as `@foliag/seeds/radio-group`, and the root entry re-exports them all.
 
-| Bloom | Former bloom name | Zag.js machine |
+| Seeds | Name in the Svelte bloom | Zag.js machine |
 |---|---|---|
 | `Accordion` | `Accordion` | accordion, collapsible |
 | `Avatar` | `Avatar` | avatar |

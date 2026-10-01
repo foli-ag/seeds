@@ -6,7 +6,7 @@
       bunScript =
         script:
         self'.packages.default.overrideAttrs {
-          name = "foliag-bloom-${script}";
+          name = "foliag-seeds-${script}";
           env = playwrightEnv;
           buildPhase = ''
             runHook preBuild

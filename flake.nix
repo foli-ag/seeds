@@ -1,5 +1,5 @@
 {
-  description = "@foliag/bloom: Solid 2 component library built on Zag.js";
+  description = "@foliag/seeds: Solid 2 component library built on Zag.js";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

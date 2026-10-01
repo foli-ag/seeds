@@ -1,5 +1,5 @@
 {
-  "name": "@foliag/bloom",
+  "name": "@foliag/seeds",
   "version": "0.1.0",
   "description": "Solid 2 component library built on Zag.js",
   "keywords": [
@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/foli-ag/bloom.git"
+    "url": "git+https://github.com/foli-ag/seeds.git"
   },
   "type": "module",
   "sideEffects": false,

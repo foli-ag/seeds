@@ -3,7 +3,7 @@
     { pkgs, lib, ... }:
     {
       packages.default = pkgs.stdenvNoCC.mkDerivation (finalAttrs: {
-        pname = "foliag-bloom";
+        pname = "foliag-seeds";
         inherit (lib.importJSON ../package.json) version;
 
         # Everything but the Nix plumbing, so editing a module does not rebuild the library
@@ -82,7 +82,7 @@
           runHook postBuild
         '';
 
-        # The npm tarball, ready for `npm publish ./result/foliag-zag-<version>.tgz`
+        # The npm tarball, ready for `npm publish ./result/foliag-seeds-<version>.tgz`
         installPhase = ''
           runHook preInstall
           bun pm pack --destination $out

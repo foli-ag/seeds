@@ -1,6 +1,6 @@
-# Bloom part naming
+# Seeds part naming
 
-How the parts of a bloom compound component are named and exported. Applies to the Solid rewrite built on zag-js / Ark UI. The current Svelte bloom (bits-ui) predates it and differs (e.g. `Dialog.Close`). `Command` has no Ark part and is out of scope until it is built.
+How the parts of a seeds compound component are named and exported. Applies to the Solid rewrite built on zag-js / Ark UI. The current Svelte bloom (bits-ui) predates it and differs (e.g. `Dialog.Close`). `Command` has no Ark part and is out of scope until it is built.
 
 The goal is guidance while typing: `Dialog.Trigger.` lists everything that acts as a trigger, and `Select.Item.` lists everything that lives in an item, without knowing a name beforehand.
 
@@ -16,11 +16,11 @@ The goal is guidance while typing: `Dialog.Trigger.` lists everything that acts 
 8. **The DOM contract is zag's and never renamed.** `data-scope` / `data-part` keep zag's values, kebab-cased from the anatomy key (`closeTrigger` renders `data-part="close-trigger"`). Selectors, tests and zag's docs keep working whatever the exported name.
 9. **No flat duplicates.** `Dialog.CloseTrigger` does not exist next to `Dialog.Trigger.Close`.
 
-## Mapping (Ark → bloom)
+## Mapping (Ark → seeds)
 
 Part lists checked against Ark's docs (Dialog, Popover, Select, Combobox, Accordion, Menu, Steps on 2026-09-30; TreeView on 2026-10-01).
 
-| Ark | bloom |
+| Ark | seeds |
 |---|---|
 | `Dialog.Trigger` | `Dialog.Trigger` (= `Dialog.Trigger.Open`) |
 | `Dialog.CloseTrigger`, `Popover.CloseTrigger` | `Trigger.Close` |
