@@ -1,8 +1,9 @@
 # @foliag/seeds
 
 Unstyled Solid 2 components built on [Zag.js](https://zagjs.com) machines through
-[@foliag/zag](https://github.com/foli-ag/zag). They have the parts of [Ark UI](https://ark-ui.com), renamed as
-[NAMING.md](NAMING.md) describes. Seeds renders the markup, ARIA attributes and `data-*` state. The app styles it.
+[@foliag/zag](https://github.com/foli-ag/zag). They have the parts of [Ark UI](https://ark-ui.com), with compound
+names nested: Ark's `Dialog.CloseTrigger` is `Dialog.Trigger.Close`. Seeds renders the markup, ARIA attributes and
+`data-*` state. The app styles it.
 
 ```sh
 bun add @foliag/seeds

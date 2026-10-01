@@ -60,6 +60,6 @@ test("shows the completed content after the last step", async () => {
   await expect.element(page.getByText("Profile form")).not.toBeVisible()
 })
 
-// Steps has nothing to open, so Trigger only groups Prev and Next (NAMING.md rule 3)
+// Steps has nothing to open, so Trigger only groups Prev and Next
 // @ts-expect-error Steps.Trigger is not a component
 ;() => <Steps.Trigger />
