@@ -107,6 +107,42 @@ Playwright only drives browsers from its own release, so the `playwright` devDep
 `nix flake check` builds the package and runs the typecheck and the tests in the sandbox. After changing `bun.lock`,
 set `outputHash` of `bunDeps` in `nix/package.nix` to `lib.fakeHash`, run `nix build` and paste the hash it reports.
 
+CI runs `nix flake check` on pushes to `main` and on pull requests.
+
+## Publishing
+
+Releases go through npm staged publishing. CI uploads the version, and nobody can install it until a maintainer approves
+it with 2FA. Publishing stays on the npm CLI because `bun publish` can neither stage a version nor attach provenance.
+
+1. Bump `version` in `package.json`, commit, then push a matching tag.
+
+   ```sh
+   git tag v0.1.1
+   git push origin v0.1.1
+   ```
+
+2. The `Publish` workflow checks the tag against `package.json`, runs `nix flake check`, and stages the tarball from
+   `nix build` with provenance.
+3. Approve the staged version from `nix develop`.
+
+   ```sh
+   npm stage list @foliag/seeds
+   npm stage approve <stage-id>
+   ```
+
+The workflow runs in the `npm` GitHub environment and reads `NPM_TOKEN` from it. That secret is a stage-only granular
+token with write access to the `@foliag` scope, so a leaked token cannot publish anything on its own. Once the package
+exists you can replace it with a GitHub Actions trusted publisher on npmjs.com (organization `foli-ag`, repository
+`seeds`, workflow `publish.yml`, environment `npm`) and delete the secret. Trusted publishers can always stage.
+
+npm's manual lists an existing package as a prerequisite for `npm stage`. If staging the first version fails for that
+reason, publish it once by hand from `nix develop`.
+
+```sh
+nix build
+npm publish ./result/foliag-seeds-0.1.0.tgz --access public
+```
+
 ## License
 
 MIT
