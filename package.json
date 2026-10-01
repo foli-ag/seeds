@@ -23,6 +23,10 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./accordion": {
+      "types": "./dist/accordion/index.d.ts",
+      "default": "./dist/accordion/index.js"
+    },
     "./avatar": {
       "types": "./dist/avatar/index.d.ts",
       "default": "./dist/avatar/index.js"
