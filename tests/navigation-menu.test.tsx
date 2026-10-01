@@ -31,11 +31,18 @@ function Basic(props: { viewport?: boolean }) {
 const trigger = () => page.getByRole("button", { name: "Products" })
 const analytics = () => page.getByText("Analytics")
 
+// Opens from the keyboard. A pointer resting on the trigger opens the item once its hover delay ends, and a click
+// landing after that closes it again, which slow machines hit.
+async function open() {
+  trigger().element().focus()
+  await userEvent.keyboard("{Enter}")
+}
+
 test("opens an item's content from its trigger and closes it on Escape", async () => {
   render(() => <Basic />)
 
   await expect.element(analytics()).not.toBeVisible()
-  await userEvent.click(trigger())
+  await open()
   await expect.element(analytics()).toBeVisible()
   await expect.element(trigger()).toHaveAttribute("aria-expanded", "true")
 
@@ -46,7 +53,7 @@ test("opens an item's content from its trigger and closes it on Escape", async (
 test("shows the open content inside the viewport", async () => {
   render(() => <Basic viewport />)
 
-  await userEvent.click(trigger())
+  await open()
   await expect.element(analytics()).toBeVisible()
   expect(analytics().element().closest('[data-scope="navigation-menu"][data-part="viewport"]')).not.toBeNull()
 })
