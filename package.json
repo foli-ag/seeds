@@ -43,6 +43,10 @@
       "types": "./dist/dialog/index.d.ts",
       "default": "./dist/dialog/index.js"
     },
+    "./menu": {
+      "types": "./dist/menu/index.d.ts",
+      "default": "./dist/menu/index.js"
+    },
     "./popover": {
       "types": "./dist/popover/index.d.ts",
       "default": "./dist/popover/index.js"
