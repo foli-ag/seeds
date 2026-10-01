@@ -27,6 +27,10 @@
       "types": "./dist/avatar/index.d.ts",
       "default": "./dist/avatar/index.js"
     },
+    "./checkbox": {
+      "types": "./dist/checkbox/index.d.ts",
+      "default": "./dist/checkbox/index.js"
+    },
     "./dialog": {
       "types": "./dist/dialog/index.d.ts",
       "default": "./dist/dialog/index.js"
