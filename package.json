@@ -1,0 +1,84 @@
+{
+  "name": "@foliag/bloom",
+  "version": "0.1.0",
+  "description": "Solid 2 component library built on Zag.js",
+  "keywords": [
+    "solid",
+    "components",
+    "ui",
+    "zag"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foli-ag/bloom.git"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "format": "biome format --write .",
+    "prepublishOnly": "bun run build"
+  },
+  "dependencies": {
+    "@foliag/zag": "^0.1.0",
+    "@zag-js/accordion": "1.44.0",
+    "@zag-js/avatar": "1.44.0",
+    "@zag-js/checkbox": "1.44.0",
+    "@zag-js/collapsible": "1.44.0",
+    "@zag-js/collection": "1.44.0",
+    "@zag-js/combobox": "1.44.0",
+    "@zag-js/core": "1.44.0",
+    "@zag-js/dialog": "1.44.0",
+    "@zag-js/menu": "1.44.0",
+    "@zag-js/navigation-menu": "1.44.0",
+    "@zag-js/popover": "1.44.0",
+    "@zag-js/presence": "1.44.0",
+    "@zag-js/radio-group": "1.44.0",
+    "@zag-js/select": "1.44.0",
+    "@zag-js/slider": "1.44.0",
+    "@zag-js/steps": "1.44.0",
+    "@zag-js/switch": "1.44.0",
+    "@zag-js/toggle-group": "1.44.0",
+    "@zag-js/types": "1.44.0",
+    "@zag-js/utils": "1.44.0"
+  },
+  "peerDependencies": {
+    "@solidjs/web": "^2.0.0-rc.9",
+    "solid-js": "^2.0.0-rc.9"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@solidjs/testing-library": "1.0.0-beta.3",
+    "@solidjs/vite-plugin": "3.0.0-next.44",
+    "@solidjs/web": "2.0.0-rc.9",
+    "@types/node": "25.9.5",
+    "@vitest/browser-playwright": "4.1.11",
+    "playwright": "1.63.0",
+    "solid-js": "2.0.0-rc.9",
+    "tsup": "8.5.1",
+    "typescript": "6.0.3",
+    "vite": "8.2.1",
+    "vitest": "4.1.11"
+  },
+  "overrides": {
+    "@solidjs/signals": "2.0.0-rc.9",
+    "@solidjs/compiler": "2.0.0-rc.9",
+    "@solidjs/babel-plugin": "2.0.0-rc.9"
+  }
+}
