@@ -43,6 +43,10 @@
       "types": "./dist/dialog/index.d.ts",
       "default": "./dist/dialog/index.js"
     },
+    "./popover": {
+      "types": "./dist/popover/index.d.ts",
+      "default": "./dist/popover/index.js"
+    },
     "./radio-group": {
       "types": "./dist/radio-group/index.d.ts",
       "default": "./dist/radio-group/index.js"
