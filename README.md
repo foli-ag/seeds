@@ -23,9 +23,16 @@ import { Dialog } from "@foliag/bloom/dialog"
 </Dialog.Root>
 ```
 
-Every part takes an `asChild` function to render your own element with the part's props merged in. Each component
-also exports `use<Name>` and `use<Name>Context` hooks, a `RootProvider` for a machine created with the hook, and a
-`Context` part that renders its children with the API.
+A part that renders an element takes `as`, as in Kobalte, to render another tag or your own component instead. The
+component receives the part's props and spreads them onto its element, and the part's props are typed after it.
+
+```tsx
+<Dialog.Trigger as={Button} variant="ghost">Open</Dialog.Trigger>
+<Dialog.Trigger as="a" href="#settings">Settings</Dialog.Trigger>
+```
+
+Each component also exports `use<Name>` and `use<Name>Context` hooks, a `RootProvider` for a machine created with the
+hook, and a `Context` part that renders its children with the API.
 
 ## Components
 

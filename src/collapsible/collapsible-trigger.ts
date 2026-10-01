@@ -1,11 +1,11 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useCollapsibleContext } from "./use-collapsible-context.js"
 
-export interface CollapsibleTriggerProps extends PartProps<"button"> {}
+export type CollapsibleTriggerProps<As extends ValidComponent = "button"> = PartProps<As>
 
-export function CollapsibleTrigger(props: CollapsibleTriggerProps): Element {
+export function CollapsibleTrigger<As extends ValidComponent = "button">(props: CollapsibleTriggerProps<As>): Element {
   const api = useCollapsibleContext()
   return render(
     "button",

@@ -1,12 +1,12 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useStepsContext } from "./use-steps-context.js"
 
-export interface StepsListProps extends PartProps<"div"> {}
+export type StepsListProps<As extends ValidComponent = "div"> = PartProps<As>
 
 /** Holds the items */
-export function StepsList(props: StepsListProps): Element {
+export function StepsList<As extends ValidComponent = "div">(props: StepsListProps<As>): Element {
   const api = useStepsContext()
   return render(
     "div",

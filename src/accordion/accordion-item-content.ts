@@ -1,13 +1,13 @@
 import { createComponent, type Element } from "solid-js"
 import { CollapsibleContent } from "../collapsible/collapsible-content.js"
-import type { PartProps } from "../utils/factory.js"
+import type { PartProps, ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useAccordionContext } from "./use-accordion-context.js"
 import { useAccordionItemPropsContext } from "./use-accordion-item-context.js"
 
-export interface AccordionItemContentProps extends PartProps<"div"> {}
+export type AccordionItemContentProps<As extends ValidComponent = "div"> = PartProps<As>
 
-export function AccordionItemContent(props: AccordionItemContentProps): Element {
+export function AccordionItemContent<As extends ValidComponent = "div">(props: AccordionItemContentProps<As>): Element {
   const api = useAccordionContext()
   const itemProps = useAccordionItemPropsContext()
   // The collapsible shows and hides the content, which the accordion only labels

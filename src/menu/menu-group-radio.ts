@@ -1,13 +1,13 @@
 import { createUniqueId, type Element } from "solid-js"
-import type { PartProps } from "../utils/factory.js"
+import type { PartProps, ValidComponent } from "../utils/factory.js"
 import { splitProps } from "../utils/split-props.js"
 import { provideGroup } from "./menu-group.js"
 import type { MenuGroupContext } from "./use-menu-group-context.js"
 
-export interface MenuGroupRadioProps extends PartProps<"div", Partial<MenuGroupContext>> {}
+export type MenuGroupRadioProps<As extends ValidComponent = "div"> = PartProps<As, Partial<MenuGroupContext>>
 
 /** Groups `Item.Radio` items, of which the one holding `value` is checked */
-export function MenuGroupRadio(props: MenuGroupRadioProps): Element {
+export function MenuGroupRadio<As extends ValidComponent = "div">(props: MenuGroupRadioProps<As>): Element {
   const [, localProps] = splitProps(props, ["id", "value", "onValueChange"])
   const id = createUniqueId()
   const group: MenuGroupContext = {

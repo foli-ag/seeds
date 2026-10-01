@@ -1,34 +1,29 @@
-import { dynamic, type JSX } from "@solidjs/web"
+import { dynamic, type ComponentProps, type ValidComponent } from "@solidjs/web"
 import { createComponent, omit, untrack, type Element } from "solid-js"
-import { mergeProps } from "./merge-props.js"
 
-export type ElementType = keyof JSX.IntrinsicElements
+export type { ValidComponent } from "@solidjs/web"
 
-export type HTMLProps<T extends ElementType> = JSX.IntrinsicElements[T]
+/**
+ * Props of a part that renders a `T`, its own element unless the caller passes `as`. `as` takes another tag, or a
+ * component that receives the part's props and spreads them onto its element. `P` wins over the props of `T`.
+ *
+ * @example
+ * <Dialog.Trigger as={Button} variant="ghost">Open</Dialog.Trigger>
+ */
+export type PartProps<T extends ValidComponent, P = {}> = P & { as?: T | undefined } & Omit<
+    ComponentProps<T>,
+    keyof P | "as"
+  >
 
-/** Props an `asChild` element receives, typed loosely enough to spread onto any element */
-export type AsChildProps = JSX.HTMLAttributes<any> & Record<string, unknown>
-
-export type PolymorphicProps<T extends ElementType> = {
-  /**
-   * Renders your own element instead of the part's. The function it receives merges your props into the part's.
-   *
-   * @example
-   * <Dialog.Trigger asChild={(props) => <a {...props({ href: "#" })} />} />
-   */
-  asChild?: ((props: (userProps?: AsChildProps) => AsChildProps) => Element) | undefined
-}
-
-/** Props of a part that renders a `T` element, with `P` taking precedence over the element's attributes */
-export type PartProps<T extends ElementType, P = {}> = P & PolymorphicProps<T> & Omit<HTMLProps<T>, keyof P>
-
-/** Renders a part as a `tag` element, or through `asChild` when the caller passes it */
-export function render<T extends ElementType>(tag: T, props: HTMLProps<T> & PolymorphicProps<T>): Element {
-  // A part renders either its own element or the caller's, for its whole life
-  const asChild = untrack(() => props.asChild)
-  const rest = omit(props, "asChild") as HTMLProps<T>
-  if (asChild) return asChild((userProps) => mergeProps(rest as AsChildProps, userProps ?? {}))
-  return createComponent(element(tag), rest)
+/** Renders a part as the caller's `as`, or as a `tag` element */
+export function render(tag: string, props: object): Element {
+  const rest = omit(props as Record<string, unknown>, "as")
+  // Most parts keep their own element, which needs no tracking
+  if (!untrack(() => "as" in props)) return createComponent(element(tag), rest)
+  return createComponent(
+    dynamic(() => (props as { as?: ValidComponent }).as ?? tag),
+    rest,
+  )
 }
 
 const elements = new Map<string, (props: any) => Element>()

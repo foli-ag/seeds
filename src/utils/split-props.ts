@@ -7,8 +7,8 @@ import { omit } from "solid-js"
 export function splitProps<T extends object, const K extends readonly PropertyKey[]>(
   props: T,
   keys: K,
-): [Pick<T, Extract<K[number], keyof T>>, Omit<T, K[number]>] {
-  const picked = {} as Pick<T, Extract<K[number], keyof T>>
+): [Pick<T, K[number] & keyof T>, Omit<T, K[number]>] {
+  const picked = {} as Pick<T, K[number] & keyof T>
   for (const key of keys) {
     Object.defineProperty(picked, key, {
       enumerable: true,

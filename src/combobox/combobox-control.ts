@@ -1,12 +1,12 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useComboboxContext } from "./use-combobox-context.js"
 
-export interface ComboboxControlProps extends PartProps<"div"> {}
+export type ComboboxControlProps<As extends ValidComponent = "div"> = PartProps<As>
 
 /** Holds the input and the triggers */
-export function ComboboxControl(props: ComboboxControlProps): Element {
+export function ComboboxControl<As extends ValidComponent = "div">(props: ComboboxControlProps<As>): Element {
   const api = useComboboxContext()
   return render(
     "div",

@@ -1,21 +1,22 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import { useNavigationMenuContext } from "./use-navigation-menu-context.js"
 import { useNavigationMenuItemProps } from "./use-navigation-menu-item.js"
 
-export interface NavigationMenuItemTriggerProps
-  extends PartProps<
-    "button",
-    {
-      /** Disables the trigger, which otherwise follows its item */
-      disabled?: boolean | undefined
-    }
-  > {}
+export type NavigationMenuItemTriggerProps<As extends ValidComponent = "button"> = PartProps<
+  As,
+  {
+    /** Disables the trigger, which otherwise follows its item */
+    disabled?: boolean | undefined
+  }
+>
 
 /** Opens the content of the item around it, on click or hover */
-export function NavigationMenuItemTrigger(props: NavigationMenuItemTriggerProps): Element {
+export function NavigationMenuItemTrigger<As extends ValidComponent = "button">(
+  props: NavigationMenuItemTriggerProps<As>,
+): Element {
   const [, localProps] = splitProps(props, ["disabled"])
   const item = useNavigationMenuItemProps("Item.Trigger")
   const triggerProps = {

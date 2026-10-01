@@ -1,12 +1,12 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useRadioGroupContext } from "./use-radio-group-context.js"
 import { useRadioGroupItemPropsContext } from "./use-radio-group-item-context.js"
 
-export interface RadioGroupItemTextProps extends PartProps<"span"> {}
+export type RadioGroupItemTextProps<As extends ValidComponent = "span"> = PartProps<As>
 
-export function RadioGroupItemText(props: RadioGroupItemTextProps): Element {
+export function RadioGroupItemText<As extends ValidComponent = "span">(props: RadioGroupItemTextProps<As>): Element {
   const api = useRadioGroupContext()
   const itemProps = useRadioGroupItemPropsContext()
   return render(

@@ -1,13 +1,15 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useRadioGroupContext } from "./use-radio-group-context.js"
 import { useRadioGroupItemPropsContext } from "./use-radio-group-item-context.js"
 
-export interface RadioGroupItemHiddenInputProps extends PartProps<"input"> {}
+export type RadioGroupItemHiddenInputProps<As extends ValidComponent = "input"> = PartProps<As>
 
 /** The native radio that carries the value into forms and the state to assistive technology */
-export function RadioGroupItemHiddenInput(props: RadioGroupItemHiddenInputProps): Element {
+export function RadioGroupItemHiddenInput<As extends ValidComponent = "input">(
+  props: RadioGroupItemHiddenInputProps<As>,
+): Element {
   const api = useRadioGroupContext()
   const itemProps = useRadioGroupItemPropsContext()
   return render(

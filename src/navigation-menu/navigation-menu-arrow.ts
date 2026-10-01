@@ -1,12 +1,12 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useNavigationMenuContext } from "./use-navigation-menu-context.js"
 
-export interface NavigationMenuArrowProps extends PartProps<"div"> {}
+export type NavigationMenuArrowProps<As extends ValidComponent = "div"> = PartProps<As>
 
 /** Points at the open item from the indicator */
-export function NavigationMenuArrow(props: NavigationMenuArrowProps): Element {
+export function NavigationMenuArrow<As extends ValidComponent = "div">(props: NavigationMenuArrowProps<As>): Element {
   const api = useNavigationMenuContext()
   return render(
     "div",

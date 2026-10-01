@@ -1,11 +1,11 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useMenuContext } from "./use-menu-context.js"
 
-export interface MenuSeparatorProps extends PartProps<"hr"> {}
+export type MenuSeparatorProps<As extends ValidComponent = "hr"> = PartProps<As>
 
-export function MenuSeparator(props: MenuSeparatorProps): Element {
+export function MenuSeparator<As extends ValidComponent = "hr">(props: MenuSeparatorProps<As>): Element {
   const api = useMenuContext()
   return render(
     "hr",

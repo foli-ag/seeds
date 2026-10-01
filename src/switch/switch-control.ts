@@ -1,12 +1,12 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useSwitchContext } from "./use-switch-context.js"
 
-export interface SwitchControlProps extends PartProps<"span"> {}
+export type SwitchControlProps<As extends ValidComponent = "span"> = PartProps<As>
 
 /** The track */
-export function SwitchControl(props: SwitchControlProps): Element {
+export function SwitchControl<As extends ValidComponent = "span">(props: SwitchControlProps<As>): Element {
   const api = useSwitchContext()
   return render(
     "span",

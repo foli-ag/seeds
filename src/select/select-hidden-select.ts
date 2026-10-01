@@ -1,13 +1,13 @@
 import { createComponent, For, type Accessor, type Component, type Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { show } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useSelectContext } from "./use-select-context.js"
 
-export interface SelectHiddenSelectProps extends PartProps<"select"> {}
+export type SelectHiddenSelectProps<As extends ValidComponent = "select"> = PartProps<As>
 
 /** The native select that carries the value into forms, with an option per item */
-export function SelectHiddenSelect(props: SelectHiddenSelectProps): Element {
+export function SelectHiddenSelect<As extends ValidComponent = "select">(props: SelectHiddenSelectProps<As>): Element {
   const api = useSelectContext()
   // The options carry the selection. Setting `value` on a multiple select to several values selects none of them.
   const selectProps = () => {

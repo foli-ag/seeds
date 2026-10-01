@@ -1,14 +1,16 @@
 import { useContext, type Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { show } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { usePresence, useRenderStrategyContext } from "../utils/presence.js"
 import { NavigationMenuViewportPropsProvider, useNavigationMenuContext } from "./use-navigation-menu-context.js"
 
-export interface NavigationMenuViewportProps extends PartProps<"div"> {}
+export type NavigationMenuViewportProps<As extends ValidComponent = "div"> = PartProps<As>
 
 /** Shows the open item's content in one place, sized to it through CSS variables */
-export function NavigationMenuViewport(props: NavigationMenuViewportProps): Element {
+export function NavigationMenuViewport<As extends ValidComponent = "div">(
+  props: NavigationMenuViewportProps<As>,
+): Element {
   const api = useNavigationMenuContext()
   const viewportProps = useContext(NavigationMenuViewportPropsProvider) ?? {}
   const strategy = useRenderStrategyContext()

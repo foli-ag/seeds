@@ -1,15 +1,17 @@
 import { untrack, type Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import type { UseCheckboxReturn } from "./use-checkbox.js"
 import { CheckboxProvider } from "./use-checkbox-context.js"
 
-export interface CheckboxRootProviderProps extends PartProps<"label", { value: UseCheckboxReturn }> {}
+export type CheckboxRootProviderProps<As extends ValidComponent = "label"> = PartProps<As, { value: UseCheckboxReturn }>
 
 /** A root for a checkbox created with `useCheckbox` */
-export function CheckboxRootProvider(props: CheckboxRootProviderProps): Element {
+export function CheckboxRootProvider<As extends ValidComponent = "label">(
+  props: CheckboxRootProviderProps<As>,
+): Element {
   const [, localProps] = splitProps(props, ["value"])
   const api = untrack(() => props.value)
   return provide(CheckboxProvider, api, () =>

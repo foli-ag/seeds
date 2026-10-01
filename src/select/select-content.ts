@@ -1,13 +1,13 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { show } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { usePresenceContext } from "../utils/presence.js"
 import { useSelectContext } from "./use-select-context.js"
 
-export interface SelectContentProps extends PartProps<"div"> {}
+export type SelectContentProps<As extends ValidComponent = "div"> = PartProps<As>
 
-export function SelectContent(props: SelectContentProps): Element {
+export function SelectContent<As extends ValidComponent = "div">(props: SelectContentProps<As>): Element {
   const api = useSelectContext()
   const presence = usePresenceContext()
   const merged = mergeProps(

@@ -1,14 +1,14 @@
 import { useContext, type Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { MenuTriggerItemProvider } from "./use-menu-context.js"
 import { MenuItemPropsProvider } from "./use-menu-item-context.js"
 
-export interface MenuItemSubmenuProps extends PartProps<"div"> {}
+export type MenuItemSubmenuProps<As extends ValidComponent = "div"> = PartProps<As>
 
 /** The item of the parent menu that opens the submenu around it */
-export function MenuItemSubmenu(props: MenuItemSubmenuProps): Element {
+export function MenuItemSubmenu<As extends ValidComponent = "div">(props: MenuItemSubmenuProps<As>): Element {
   const triggerItemProps = useContext(MenuTriggerItemProvider)
   const merged = mergeProps(() => triggerItemProps?.() ?? {}, props)
   // Item.Text and Item.Indicator inside it ask the parent menu about this item

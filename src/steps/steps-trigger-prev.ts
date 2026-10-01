@@ -1,12 +1,12 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useStepsContext } from "./use-steps-context.js"
 
-export interface StepsTriggerPrevProps extends PartProps<"button"> {}
+export type StepsTriggerPrevProps<As extends ValidComponent = "button"> = PartProps<As>
 
 /** Goes to the previous step */
-export function StepsTriggerPrev(props: StepsTriggerPrevProps): Element {
+export function StepsTriggerPrev<As extends ValidComponent = "button">(props: StepsTriggerPrevProps<As>): Element {
   const api = useStepsContext()
   return render(
     "button",

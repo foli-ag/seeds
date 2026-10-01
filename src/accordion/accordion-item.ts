@@ -1,7 +1,7 @@
 import type * as accordion from "@zag-js/accordion"
 import { createComponent, createMemo, untrack, type Element } from "solid-js"
 import { CollapsibleRoot, type CollapsibleRootProps } from "../collapsible/collapsible-root.js"
-import type { PartProps } from "../utils/factory.js"
+import type { PartProps, ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useRenderStrategyContext } from "../utils/presence.js"
@@ -9,10 +9,10 @@ import { splitProps } from "../utils/split-props.js"
 import { useAccordionContext } from "./use-accordion-context.js"
 import { AccordionItemPropsProvider, AccordionItemProvider } from "./use-accordion-item-context.js"
 
-export interface AccordionItemProps extends PartProps<"div", accordion.ItemProps> {}
+export type AccordionItemProps<As extends ValidComponent = "div"> = PartProps<As, accordion.ItemProps>
 
 /** A collapsible that the accordion opens and closes */
-export function AccordionItem(props: AccordionItemProps): Element {
+export function AccordionItem<As extends ValidComponent = "div">(props: AccordionItemProps<As>): Element {
   const [itemProps, localProps] = splitProps(props, ["value", "disabled"])
   const api = useAccordionContext()
   const strategy = useRenderStrategyContext()

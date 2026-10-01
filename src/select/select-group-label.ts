@@ -1,13 +1,13 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useSelectContext } from "./use-select-context.js"
 import { useSelectGroupPropsContext } from "./use-select-item-context.js"
 
-export interface SelectGroupLabelProps extends PartProps<"div"> {}
+export type SelectGroupLabelProps<As extends ValidComponent = "div"> = PartProps<As>
 
 /** Names the group around it */
-export function SelectGroupLabel(props: SelectGroupLabelProps): Element {
+export function SelectGroupLabel<As extends ValidComponent = "div">(props: SelectGroupLabelProps<As>): Element {
   const api = useSelectContext()
   const group = useSelectGroupPropsContext()
   return render(

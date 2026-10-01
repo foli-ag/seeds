@@ -1,12 +1,12 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useStepsContext } from "./use-steps-context.js"
 
-export interface StepsProgressProps extends PartProps<"div"> {}
+export type StepsProgressProps<As extends ValidComponent = "div"> = PartProps<As>
 
 /** Exposes the completed share as a progressbar and through `--percent` */
-export function StepsProgress(props: StepsProgressProps): Element {
+export function StepsProgress<As extends ValidComponent = "div">(props: StepsProgressProps<As>): Element {
   const api = useStepsContext()
   return render(
     "div",

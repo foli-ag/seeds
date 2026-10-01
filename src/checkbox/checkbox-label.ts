@@ -1,11 +1,11 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useCheckboxContext } from "./use-checkbox-context.js"
 
-export interface CheckboxLabelProps extends PartProps<"span"> {}
+export type CheckboxLabelProps<As extends ValidComponent = "span"> = PartProps<As>
 
-export function CheckboxLabel(props: CheckboxLabelProps): Element {
+export function CheckboxLabel<As extends ValidComponent = "span">(props: CheckboxLabelProps<As>): Element {
   const api = useCheckboxContext()
   return render(
     "span",

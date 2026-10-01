@@ -1,12 +1,14 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useComboboxContext } from "./use-combobox-context.js"
 
-export interface ComboboxTriggerClearProps extends PartProps<"button"> {}
+export type ComboboxTriggerClearProps<As extends ValidComponent = "button"> = PartProps<As>
 
 /** Clears the value */
-export function ComboboxTriggerClear(props: ComboboxTriggerClearProps): Element {
+export function ComboboxTriggerClear<As extends ValidComponent = "button">(
+  props: ComboboxTriggerClearProps<As>,
+): Element {
   const api = useComboboxContext()
   return render(
     "button",

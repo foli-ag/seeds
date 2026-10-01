@@ -1,14 +1,14 @@
 import type * as steps from "@zag-js/steps"
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import { useStepsContext } from "./use-steps-context.js"
 
-export interface StepsContentProps extends PartProps<"div", steps.ItemProps> {}
+export type StepsContentProps<As extends ValidComponent = "div"> = PartProps<As, steps.ItemProps>
 
 /** Shown while the step at `index` is current */
-export function StepsContent(props: StepsContentProps): Element {
+export function StepsContent<As extends ValidComponent = "div">(props: StepsContentProps<As>): Element {
   const [itemProps, localProps] = splitProps(props, ["index"])
   const api = useStepsContext()
   return render(

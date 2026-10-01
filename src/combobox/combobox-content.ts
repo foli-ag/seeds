@@ -1,13 +1,13 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory.js"
+import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
 import { show } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { usePresenceContext } from "../utils/presence.js"
 import { useComboboxContext } from "./use-combobox-context.js"
 
-export interface ComboboxContentProps extends PartProps<"div"> {}
+export type ComboboxContentProps<As extends ValidComponent = "div"> = PartProps<As>
 
-export function ComboboxContent(props: ComboboxContentProps): Element {
+export function ComboboxContent<As extends ValidComponent = "div">(props: ComboboxContentProps<As>): Element {
   const api = useComboboxContext()
   const presence = usePresenceContext()
   const merged = mergeProps(
