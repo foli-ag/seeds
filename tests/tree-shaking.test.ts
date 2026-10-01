@@ -24,25 +24,25 @@ const machines = Object.keys(pkg.dependencies).filter(
     name.startsWith("@zag-js/") && !["core", "types", "utils", "presence", "collection"].includes(name.slice(8)),
 )
 
-test("leaves out the components an app does not use", async () => {
-  const code = await bundle(`import { Dialog } from "seeds"; export default Dialog.Root`)
+test("brings in no other component than the one imported", async () => {
+  const code = await bundle(`import { Dialog } from "seeds/dialog"; export default Dialog.Root`)
 
   const imported = machines.filter((name) => code.includes(`"${name}"`))
   expect(imported).toEqual(["@zag-js/dialog"])
 })
 
 test("leaves out the parts an app does not use", async () => {
-  const rootOnly = await bundle(`import { Dialog } from "seeds"; export default Dialog.Root`)
-  const withTitle = await bundle(`import { Dialog } from "seeds"; export default [Dialog.Root, Dialog.Title]`)
+  const rootOnly = await bundle(`import { Dialog } from "seeds/dialog"; export default Dialog.Root`)
+  const withTitle = await bundle(`import { Dialog } from "seeds/dialog"; export default [Dialog.Root, Dialog.Title]`)
 
   expect(rootOnly).not.toContain("getTitleProps")
   expect(withTitle).toContain("getTitleProps")
 })
 
-/** Bundles an app whose `entry` imports the library as "seeds", leaving the dependencies as imports */
+/** Bundles an app whose `entry` imports subpaths of the library as "seeds/...", leaving the dependencies as imports */
 async function bundle(entry: string): Promise<string> {
   const app = join(library, "app.js")
-  await writeFile(app, entry.replace('"seeds"', '"./index.js"'))
+  await writeFile(app, entry.replace(/"seeds\/([\w-]+)"/g, '"./$1/index.js"'))
   const [output] = (await build({
     configFile: false,
     logLevel: "silent",

@@ -2,7 +2,7 @@
 import { render } from "@solidjs/testing-library"
 import type { JSX } from "@solidjs/web"
 import { page, userEvent } from "vitest/browser"
-import { Dialog } from "../src"
+import { Dialog } from "../src/dialog/index.js"
 
 function Button(props: JSX.ButtonHTMLAttributes<HTMLButtonElement> & { variant: "ghost" | "solid" }) {
   return <button {...props} data-variant={props.variant} />

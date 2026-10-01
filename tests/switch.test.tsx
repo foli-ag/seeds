@@ -1,7 +1,7 @@
 import { render } from "@solidjs/testing-library"
 import { createSignal } from "solid-js"
 import { page, userEvent } from "vitest/browser"
-import { Switch } from "../src"
+import { Switch } from "../src/switch/index.js"
 
 function Basic(props: Switch.RootProps) {
   return (

@@ -1,6 +1,6 @@
 import { render } from "@solidjs/testing-library"
 import { page, userEvent } from "vitest/browser"
-import { ToggleGroup } from "../src"
+import { ToggleGroup } from "../src/toggle-group/index.js"
 
 function Basic(props: ToggleGroup.RootProps) {
   return (

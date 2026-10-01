@@ -1,7 +1,7 @@
 import { render } from "@solidjs/testing-library"
 import { createMemo, createSignal, For } from "solid-js"
 import { page, userEvent } from "vitest/browser"
-import { Combobox, createListCollection } from "../src"
+import { Combobox, createListCollection } from "../src/combobox/index.js"
 
 const countries = [
   { label: "Belgium", value: "be" },

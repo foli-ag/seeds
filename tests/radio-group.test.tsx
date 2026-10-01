@@ -1,7 +1,7 @@
 import { render } from "@solidjs/testing-library"
 import { For } from "solid-js"
 import { page, userEvent } from "vitest/browser"
-import { RadioGroup } from "../src"
+import { RadioGroup } from "../src/radio-group/index.js"
 
 function Basic(props: RadioGroup.RootProps) {
   return (

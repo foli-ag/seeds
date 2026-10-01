@@ -20,10 +20,6 @@
     "skills"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
     "./accordion": {
       "types": "./dist/accordion/index.d.ts",
       "default": "./dist/accordion/index.js"

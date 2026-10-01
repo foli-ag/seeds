@@ -1,7 +1,7 @@
 import { render } from "@solidjs/testing-library"
 import { createSignal } from "solid-js"
 import { page, userEvent } from "vitest/browser"
-import { Menu } from "../src"
+import { Menu } from "../src/menu/index.js"
 
 const trigger = () => page.getByRole("button", { name: "Actions" })
 const item = (name: string) => page.getByRole("menuitem", { name })

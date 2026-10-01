@@ -1,7 +1,7 @@
 import { render } from "@solidjs/testing-library"
 import { Show } from "solid-js"
 import { page, userEvent } from "vitest/browser"
-import { NavigationMenu } from "../src"
+import { NavigationMenu } from "../src/navigation-menu/index.js"
 
 function Basic(props: { viewport?: boolean }) {
   return (

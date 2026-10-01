@@ -1,6 +1,6 @@
 import { render } from "@solidjs/testing-library"
 import { page } from "vitest/browser"
-import { Avatar } from "../src"
+import { Avatar } from "../src/avatar/index.js"
 
 const pixel =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="

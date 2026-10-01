@@ -54,7 +54,8 @@ hook, and a `Context` part that renders its children with the API.
 
 ## Components
 
-Each one is a subpath export, such as `@foliag/seeds/radio-group`, and the root entry re-exports them all.
+Each one is imported from its own subpath, such as `@foliag/seeds/radio-group`. There is no root entry, so a server
+or a dev server, which do not tree-shake, load only the components a page imports.
 
 | Seeds | Name in the Svelte bloom | Zag.js machine |
 |---|---|---|

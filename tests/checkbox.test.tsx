@@ -1,6 +1,6 @@
 import { render } from "@solidjs/testing-library"
 import { page, userEvent } from "vitest/browser"
-import { Checkbox } from "../src"
+import { Checkbox } from "../src/checkbox/index.js"
 
 function Basic(props: Checkbox.RootProps) {
   return (

@@ -1,6 +1,6 @@
 import { render } from "@solidjs/testing-library"
 import { page, userEvent } from "vitest/browser"
-import { Popover } from "../src"
+import { Popover } from "../src/popover/index.js"
 
 function Basic(props: Popover.RootProps) {
   // Away from the viewport's edges, which push the content back in

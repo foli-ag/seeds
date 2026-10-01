@@ -1,6 +1,6 @@
 import { render } from "@solidjs/testing-library"
 import { page, userEvent } from "vitest/browser"
-import { Collapsible } from "../src"
+import { Collapsible } from "../src/collapsible/index.js"
 
 function Basic(props: Collapsible.RootProps) {
   return (

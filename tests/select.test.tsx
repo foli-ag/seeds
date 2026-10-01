@@ -1,7 +1,7 @@
 import { render } from "@solidjs/testing-library"
 import { For } from "solid-js"
 import { page, userEvent } from "vitest/browser"
-import { createListCollection, Select } from "../src"
+import { createListCollection, Select } from "../src/select/index.js"
 
 const fruits = createListCollection({
   items: [

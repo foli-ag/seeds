@@ -1,7 +1,7 @@
 import { render } from "@solidjs/testing-library"
 import { createSignal } from "solid-js"
 import { page, userEvent } from "vitest/browser"
-import { Dialog, useDialog } from "../src"
+import { Dialog, useDialog } from "../src/dialog/index.js"
 
 function Basic(props: Dialog.RootProps) {
   return (

@@ -2,7 +2,7 @@ import { render } from "@solidjs/testing-library"
 import type { JSX } from "@solidjs/web"
 import { createSignal, flush, omit, type Element } from "solid-js"
 import { page } from "vitest/browser"
-import { Polymorphic, type PolymorphicProps, type ValidComponent } from "../src"
+import { Polymorphic, type PolymorphicProps, type ValidComponent } from "../src/polymorphic/index.js"
 
 // A component of an app's own, built the way the docs suggest
 function Button<As extends ValidComponent = "button">(

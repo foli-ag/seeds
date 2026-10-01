@@ -101,7 +101,9 @@ Every part has its own file in `src/<component>/`, named after its seeds path: `
   its own provider, and the `use<Component>Context` hook. The `Context` part keeps the name `<Component>Context`.
 - `<component>.ts` assembles the namespace from the part files and nothing else. It renames each part and its props
   type to the path inside the namespace (`Trigger`, `TriggerCloseProps`).
-- `index.ts` exports the namespace with `export * as Dialog from "./dialog.js"`, plus the hooks.
+- `index.ts` exports the namespace with `export * as Dialog from "./dialog.js"`, plus the hooks. It is the
+  component's subpath in `package.json` `exports`, `@foliag/seeds/dialog`. There is no root entry re-exporting the
+  components: a server and a dev server do not tree-shake, and would load all of them.
 
 A part that renders an element types its props as `PolymorphicProps<As, P>` with `As extends ValidComponent` defaulting to its
 own tag, so `as` can swap the element or pass a component.

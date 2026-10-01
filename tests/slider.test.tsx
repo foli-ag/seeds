@@ -1,7 +1,7 @@
 import { render } from "@solidjs/testing-library"
 import { For } from "solid-js"
 import { page, userEvent } from "vitest/browser"
-import { Slider } from "../src"
+import { Slider } from "../src/slider/index.js"
 
 function Basic(props: Slider.RootProps) {
   return (

@@ -1,7 +1,7 @@
 import { render } from "@solidjs/testing-library"
 import { For } from "solid-js"
 import { page, userEvent } from "vitest/browser"
-import { Accordion } from "../src"
+import { Accordion } from "../src/accordion/index.js"
 
 const items = ["Shipping", "Returns"]
 
