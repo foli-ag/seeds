@@ -39,6 +39,10 @@
       "types": "./dist/collapsible/index.d.ts",
       "default": "./dist/collapsible/index.js"
     },
+    "./combobox": {
+      "types": "./dist/combobox/index.d.ts",
+      "default": "./dist/combobox/index.js"
+    },
     "./dialog": {
       "types": "./dist/dialog/index.d.ts",
       "default": "./dist/dialog/index.js"
