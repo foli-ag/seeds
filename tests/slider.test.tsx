@@ -15,7 +15,7 @@ function Basic(props: Slider.RootProps) {
         <For each={props.defaultValue ?? [0]}>
           {(_, index) => (
             <Slider.Thumb index={index()}>
-              <Slider.Thumb.HiddenInput />
+              <Slider.HiddenInput />
             </Slider.Thumb>
           )}
         </For>

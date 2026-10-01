@@ -4,10 +4,10 @@ import { mergeProps } from "../utils/merge-props.js"
 import { useSliderContext } from "./use-slider-context.js"
 import { useSliderThumbPropsContext } from "./use-slider-thumb-context.js"
 
-export interface SliderThumbDraggingIndicatorProps extends PartProps<"span"> {}
+export interface SliderDraggingIndicatorProps extends PartProps<"span"> {}
 
-/** Shown while its thumb is dragged, with `children` or the thumb's value */
-export function SliderThumbDraggingIndicator(props: SliderThumbDraggingIndicatorProps): Element {
+/** Shown while the thumb around it is dragged, with `children` or the thumb's value */
+export function SliderDraggingIndicator(props: SliderDraggingIndicatorProps): Element {
   const api = useSliderContext()
   const thumbProps = useSliderThumbPropsContext()
   return render(

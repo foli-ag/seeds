@@ -4,10 +4,10 @@ import { mergeProps } from "../utils/merge-props.js"
 import { useSliderContext } from "./use-slider-context.js"
 import { useSliderThumbPropsContext } from "./use-slider-thumb-context.js"
 
-export interface SliderThumbHiddenInputProps extends PartProps<"input"> {}
+export interface SliderHiddenInputProps extends PartProps<"input"> {}
 
-/** Carries its thumb's value into forms */
-export function SliderThumbHiddenInput(props: SliderThumbHiddenInputProps): Element {
+/** Carries the value of the thumb around it into forms */
+export function SliderHiddenInput(props: SliderHiddenInputProps): Element {
   const api = useSliderContext()
   const thumbProps = useSliderThumbPropsContext()
   return render(
