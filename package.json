@@ -43,6 +43,10 @@
       "types": "./dist/dialog/index.d.ts",
       "default": "./dist/dialog/index.js"
     },
+    "./radio-group": {
+      "types": "./dist/radio-group/index.d.ts",
+      "default": "./dist/radio-group/index.js"
+    },
     "./switch": {
       "types": "./dist/switch/index.d.ts",
       "default": "./dist/switch/index.js"
