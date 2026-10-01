@@ -1,6 +1,6 @@
 import * as collapsible from "@zag-js/collapsible"
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { renderStrategyKeys } from "../utils/presence.js"
@@ -8,7 +8,7 @@ import { splitProps } from "../utils/split-props.js"
 import { useCollapsible, type UseCollapsibleProps } from "./use-collapsible.js"
 import { CollapsibleProvider } from "./use-collapsible-context.js"
 
-export type CollapsibleRootProps<As extends ValidComponent = "div"> = PartProps<As, UseCollapsibleProps>
+export type CollapsibleRootProps<As extends ValidComponent = "div"> = PolymorphicProps<As, UseCollapsibleProps>
 
 export function CollapsibleRoot<As extends ValidComponent = "div">(props: CollapsibleRootProps<As>): Element {
   const [collapsibleProps, localProps] = splitProps(props, [...collapsible.props, ...renderStrategyKeys])

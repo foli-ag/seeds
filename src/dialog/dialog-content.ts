@@ -1,11 +1,11 @@
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { show } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { usePresenceContext } from "../utils/presence.js"
 import { useDialogContext } from "./use-dialog-context.js"
 
-export type DialogContentProps<As extends ValidComponent = "div"> = PartProps<As>
+export type DialogContentProps<As extends ValidComponent = "div"> = PolymorphicProps<As>
 
 export function DialogContent<As extends ValidComponent = "div">(props: DialogContentProps<As>): Element {
   const api = useDialogContext()

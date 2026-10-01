@@ -1,9 +1,9 @@
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useSliderContext } from "./use-slider-context.js"
 
-export type SliderRangeProps<As extends ValidComponent = "div"> = PartProps<As>
+export type SliderRangeProps<As extends ValidComponent = "div"> = PolymorphicProps<As>
 
 /** The part of the track between the origin and the value */
 export function SliderRange<As extends ValidComponent = "div">(props: SliderRangeProps<As>): Element {

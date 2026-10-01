@@ -1,11 +1,11 @@
 import { createComponent, type Element } from "solid-js"
 import { CollapsibleContent } from "../collapsible/collapsible-content.js"
-import type { PartProps, ValidComponent } from "../utils/factory.js"
+import type { PolymorphicProps, ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useAccordionContext } from "./use-accordion-context.js"
 import { useAccordionItemPropsContext } from "./use-accordion-item-context.js"
 
-export type AccordionItemContentProps<As extends ValidComponent = "div"> = PartProps<As>
+export type AccordionItemContentProps<As extends ValidComponent = "div"> = PolymorphicProps<As>
 
 export function AccordionItemContent<As extends ValidComponent = "div">(props: AccordionItemContentProps<As>): Element {
   const api = useAccordionContext()

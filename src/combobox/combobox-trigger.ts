@@ -1,11 +1,11 @@
 import type * as combobox from "@zag-js/combobox"
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import { useComboboxContext } from "./use-combobox-context.js"
 
-export type ComboboxTriggerProps<As extends ValidComponent = "button"> = PartProps<As, combobox.TriggerProps>
+export type ComboboxTriggerProps<As extends ValidComponent = "button"> = PolymorphicProps<As, combobox.TriggerProps>
 
 /** Opens and closes the list, and is also `Combobox.Trigger.Open` */
 export function ComboboxTrigger<As extends ValidComponent = "button">(props: ComboboxTriggerProps<As>): Element {

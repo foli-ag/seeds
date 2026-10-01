@@ -1,12 +1,12 @@
 import { untrack, type Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import type { UseCollapsibleReturn } from "./use-collapsible.js"
 import { CollapsibleProvider } from "./use-collapsible-context.js"
 
-export type CollapsibleRootProviderProps<As extends ValidComponent = "div"> = PartProps<
+export type CollapsibleRootProviderProps<As extends ValidComponent = "div"> = PolymorphicProps<
   As,
   { value: UseCollapsibleReturn }
 >

@@ -1,13 +1,13 @@
 import { Portal } from "@solidjs/web"
 import { createComponent, createMemo, Show, useContext, type Component, type Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { provide, show } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { PresenceContext, usePresence, useRenderStrategyContext } from "../utils/presence.js"
 import { splitProps } from "../utils/split-props.js"
 import { NavigationMenuItemPropsProvider, useNavigationMenuContext } from "./use-navigation-menu-context.js"
 
-export type NavigationMenuContentProps<As extends ValidComponent = "div"> = PartProps<
+export type NavigationMenuContentProps<As extends ValidComponent = "div"> = PolymorphicProps<
   As,
   { value?: string | undefined }
 >

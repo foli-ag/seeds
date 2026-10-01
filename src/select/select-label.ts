@@ -1,9 +1,9 @@
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useSelectContext } from "./use-select-context.js"
 
-export type SelectLabelProps<As extends ValidComponent = "label"> = PartProps<As>
+export type SelectLabelProps<As extends ValidComponent = "label"> = PolymorphicProps<As>
 
 export function SelectLabel<As extends ValidComponent = "label">(props: SelectLabelProps<As>): Element {
   const api = useSelectContext()

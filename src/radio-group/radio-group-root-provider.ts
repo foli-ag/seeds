@@ -1,12 +1,12 @@
 import { untrack, type Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import type { UseRadioGroupReturn } from "./use-radio-group.js"
 import { RadioGroupProvider } from "./use-radio-group-context.js"
 
-export type RadioGroupRootProviderProps<As extends ValidComponent = "div"> = PartProps<
+export type RadioGroupRootProviderProps<As extends ValidComponent = "div"> = PolymorphicProps<
   As,
   { value: UseRadioGroupReturn }
 >

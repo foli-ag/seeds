@@ -1,12 +1,12 @@
 import { createUniqueId, type Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import { useMenuContext } from "./use-menu-context.js"
 import { MenuGroupProvider, type MenuGroupContext } from "./use-menu-group-context.js"
 
-export type MenuGroupProps<As extends ValidComponent = "div"> = PartProps<As, { id?: string | undefined }>
+export type MenuGroupProps<As extends ValidComponent = "div"> = PolymorphicProps<As, { id?: string | undefined }>
 
 /** Groups items under a `Group.Label` */
 export function MenuGroup<As extends ValidComponent = "div">(props: MenuGroupProps<As>): Element {
@@ -20,7 +20,7 @@ export function MenuGroup<As extends ValidComponent = "div">(props: MenuGroupPro
   return provideGroup(group, localProps)
 }
 
-export function provideGroup(group: MenuGroupContext, props: PartProps<"div">): Element {
+export function provideGroup(group: MenuGroupContext, props: PolymorphicProps<"div">): Element {
   const api = useMenuContext()
   return provide(MenuGroupProvider, group, () =>
     render(

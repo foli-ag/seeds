@@ -1,13 +1,13 @@
 import type { CollectionItem } from "@zag-js/collection"
 import * as select from "@zag-js/select"
 import type { Element } from "solid-js"
-import type { PartProps, ValidComponent } from "../utils/factory.js"
+import type { PolymorphicProps, ValidComponent } from "../utils/factory.js"
 import { splitPresenceProps, type UsePresenceProps } from "../utils/presence.js"
 import { splitProps } from "../utils/split-props.js"
 import { provideSelect } from "./select-root-provider.js"
 import { useSelect, type UseSelectProps } from "./use-select.js"
 
-export type SelectRootProps<T extends CollectionItem = any, As extends ValidComponent = "div"> = PartProps<
+export type SelectRootProps<T extends CollectionItem = any, As extends ValidComponent = "div"> = PolymorphicProps<
   As,
   UseSelectProps<T> & Omit<UsePresenceProps, "present">
 >

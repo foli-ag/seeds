@@ -1,12 +1,12 @@
 import type * as menu from "@zag-js/menu"
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { usePresenceContext } from "../utils/presence.js"
 import { splitProps } from "../utils/split-props.js"
 import { useMenuContext } from "./use-menu-context.js"
 
-export type MenuTriggerProps<As extends ValidComponent = "button"> = PartProps<As, menu.TriggerProps>
+export type MenuTriggerProps<As extends ValidComponent = "button"> = PolymorphicProps<As, menu.TriggerProps>
 
 /** Opens and closes the menu, and is also `Menu.Trigger.Open` */
 export function MenuTrigger<As extends ValidComponent = "button">(props: MenuTriggerProps<As>): Element {

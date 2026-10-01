@@ -1,5 +1,5 @@
 import { untrack, type Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { RenderStrategyContext, renderStrategyKeys, type RenderStrategyProps } from "../utils/presence.js"
@@ -7,7 +7,7 @@ import { splitProps } from "../utils/split-props.js"
 import type { UseNavigationMenuReturn } from "./use-navigation-menu.js"
 import { NavigationMenuProvider } from "./use-navigation-menu-context.js"
 
-export type NavigationMenuRootProviderProps<As extends ValidComponent = "nav"> = PartProps<
+export type NavigationMenuRootProviderProps<As extends ValidComponent = "nav"> = PolymorphicProps<
   As,
   RenderStrategyProps & { value: UseNavigationMenuReturn }
 >
@@ -28,7 +28,7 @@ export function NavigationMenuRootProvider<As extends ValidComponent = "nav">(
 export function provideNavigationMenu(
   api: UseNavigationMenuReturn,
   strategy: RenderStrategyProps,
-  props: PartProps<"nav">,
+  props: PolymorphicProps<"nav">,
 ) {
   // Contents, the indicator and the viewport each mount as the root says
   return provide(NavigationMenuProvider, api, () =>

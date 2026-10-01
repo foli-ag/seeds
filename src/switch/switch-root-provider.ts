@@ -1,12 +1,15 @@
 import { untrack, type Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import type { UseSwitchReturn } from "./use-switch.js"
 import { SwitchProvider } from "./use-switch-context.js"
 
-export type SwitchRootProviderProps<As extends ValidComponent = "label"> = PartProps<As, { value: UseSwitchReturn }>
+export type SwitchRootProviderProps<As extends ValidComponent = "label"> = PolymorphicProps<
+  As,
+  { value: UseSwitchReturn }
+>
 
 /** A root for a switch created with `useSwitch` */
 export function SwitchRootProvider<As extends ValidComponent = "label">(props: SwitchRootProviderProps<As>): Element {

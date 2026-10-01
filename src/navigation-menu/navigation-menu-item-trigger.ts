@@ -1,11 +1,11 @@
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import { useNavigationMenuContext } from "./use-navigation-menu-context.js"
 import { useNavigationMenuItemProps } from "./use-navigation-menu-item.js"
 
-export type NavigationMenuItemTriggerProps<As extends ValidComponent = "button"> = PartProps<
+export type NavigationMenuItemTriggerProps<As extends ValidComponent = "button"> = PolymorphicProps<
   As,
   {
     /** Disables the trigger, which otherwise follows its item */

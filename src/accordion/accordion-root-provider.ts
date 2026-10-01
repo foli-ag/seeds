@@ -1,5 +1,5 @@
 import { untrack, type Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { RenderStrategyContext, renderStrategyKeys, type RenderStrategyProps } from "../utils/presence.js"
@@ -7,7 +7,7 @@ import { splitProps } from "../utils/split-props.js"
 import type { UseAccordionReturn } from "./use-accordion.js"
 import { AccordionProvider } from "./use-accordion-context.js"
 
-export type AccordionRootProviderProps<As extends ValidComponent = "div"> = PartProps<
+export type AccordionRootProviderProps<As extends ValidComponent = "div"> = PolymorphicProps<
   As,
   RenderStrategyProps & { value: UseAccordionReturn }
 >

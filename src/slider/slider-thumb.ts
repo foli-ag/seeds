@@ -1,13 +1,13 @@
 import type * as slider from "@zag-js/slider"
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import { useSliderContext } from "./use-slider-context.js"
 import { SliderThumbPropsProvider } from "./use-slider-thumb-context.js"
 
-export type SliderThumbProps<As extends ValidComponent = "div"> = PartProps<As, slider.ThumbProps>
+export type SliderThumbProps<As extends ValidComponent = "div"> = PolymorphicProps<As, slider.ThumbProps>
 
 /** The handle for the value at `index` */
 export function SliderThumb<As extends ValidComponent = "div">(props: SliderThumbProps<As>): Element {

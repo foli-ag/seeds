@@ -1,10 +1,10 @@
 import { createComponent, For, type Accessor, type Component, type Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { show } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useSelectContext } from "./use-select-context.js"
 
-export type SelectHiddenSelectProps<As extends ValidComponent = "select"> = PartProps<As>
+export type SelectHiddenSelectProps<As extends ValidComponent = "select"> = PolymorphicProps<As>
 
 /** The native select that carries the value into forms, with an option per item */
 export function SelectHiddenSelect<As extends ValidComponent = "select">(props: SelectHiddenSelectProps<As>): Element {

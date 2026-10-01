@@ -1,10 +1,10 @@
 import { createUniqueId, type Element } from "solid-js"
-import type { PartProps, ValidComponent } from "../utils/factory.js"
+import type { PolymorphicProps, ValidComponent } from "../utils/factory.js"
 import { splitProps } from "../utils/split-props.js"
 import { provideGroup } from "./menu-group.js"
 import type { MenuGroupContext } from "./use-menu-group-context.js"
 
-export type MenuGroupRadioProps<As extends ValidComponent = "div"> = PartProps<As, Partial<MenuGroupContext>>
+export type MenuGroupRadioProps<As extends ValidComponent = "div"> = PolymorphicProps<As, Partial<MenuGroupContext>>
 
 /** Groups `Item.Radio` items, of which the one holding `value` is checked */
 export function MenuGroupRadio<As extends ValidComponent = "div">(props: MenuGroupRadioProps<As>): Element {

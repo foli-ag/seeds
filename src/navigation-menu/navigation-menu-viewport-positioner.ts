@@ -1,12 +1,12 @@
 import type * as navigationMenu from "@zag-js/navigation-menu"
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import { NavigationMenuViewportPropsProvider, useNavigationMenuContext } from "./use-navigation-menu-context.js"
 
-export type NavigationMenuViewportPositionerProps<As extends ValidComponent = "div"> = PartProps<
+export type NavigationMenuViewportPositionerProps<As extends ValidComponent = "div"> = PolymorphicProps<
   As,
   navigationMenu.ViewportProps
 >

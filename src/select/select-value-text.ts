@@ -1,10 +1,10 @@
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import { useSelectContext } from "./use-select-context.js"
 
-export type SelectValueTextProps<As extends ValidComponent = "span"> = PartProps<
+export type SelectValueTextProps<As extends ValidComponent = "span"> = PolymorphicProps<
   As,
   {
     /** Shown while nothing is selected */

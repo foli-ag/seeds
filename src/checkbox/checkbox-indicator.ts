@@ -1,10 +1,10 @@
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import { useCheckboxContext } from "./use-checkbox-context.js"
 
-export type CheckboxIndicatorProps<As extends ValidComponent = "div"> = PartProps<
+export type CheckboxIndicatorProps<As extends ValidComponent = "div"> = PolymorphicProps<
   As,
   {
     /** Shows the indicator while the checkbox is indeterminate instead of while it is checked */

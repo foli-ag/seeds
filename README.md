@@ -32,6 +32,23 @@ component receives the part's props and spreads them onto its element, and the p
 <Dialog.Trigger as="a" href="#settings">Settings</Dialog.Trigger>
 ```
 
+Your own components take `as` the same way when they render through `Polymorphic`:
+
+```tsx
+import { Polymorphic, type PolymorphicProps, type ValidComponent } from "@foliag/seeds/polymorphic"
+import { omit } from "solid-js"
+
+function Button<As extends ValidComponent = "button">(props: PolymorphicProps<As, { variant?: "solid" | "ghost" }>) {
+  const rest = omit(props, "variant")
+  return <Polymorphic as="button" data-variant={props.variant ?? "solid"} {...rest} />
+}
+
+<Button as="a" href="/docs" variant="ghost">Docs</Button>
+```
+
+The caller's `as` wins because it is spread after the default. `PolymorphicProps` types the props after it, so
+`<Button href="/docs">` is a type error while `<Button as="a" href="/docs">` is not.
+
 Each component also exports `use<Name>` and `use<Name>Context` hooks, a `RootProvider` for a machine created with the
 hook, and a `Context` part that renders its children with the API.
 

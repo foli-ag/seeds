@@ -1,12 +1,12 @@
 import type * as dialog from "@zag-js/dialog"
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { usePresenceContext } from "../utils/presence.js"
 import { splitProps } from "../utils/split-props.js"
 import { useDialogContext } from "./use-dialog-context.js"
 
-export type DialogTriggerProps<T extends ValidComponent = "button"> = PartProps<T, dialog.TriggerProps>
+export type DialogTriggerProps<T extends ValidComponent = "button"> = PolymorphicProps<T, dialog.TriggerProps>
 
 /** Opens the dialog, and is also `Dialog.Trigger.Open` */
 export function DialogTrigger<T extends ValidComponent = "button">(props: DialogTriggerProps<T>): Element {

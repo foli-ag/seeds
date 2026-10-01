@@ -103,7 +103,7 @@ Every part has its own file in `src/<component>/`, named after its seeds path: `
   type to the path inside the namespace (`Trigger`, `TriggerCloseProps`).
 - `index.ts` exports the namespace with `export * as Dialog from "./dialog.js"`, plus the hooks.
 
-A part that renders an element types its props as `PartProps<As, P>` with `As extends ValidComponent` defaulting to its
+A part that renders an element types its props as `PolymorphicProps<As, P>` with `As extends ValidComponent` defaulting to its
 own tag, so `as` can swap the element or pass a component.
 
 ## Implementation notes

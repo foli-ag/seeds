@@ -1,19 +1,8 @@
-import { dynamic, type ComponentProps, type ValidComponent } from "@solidjs/web"
+import { dynamic, type ValidComponent } from "@solidjs/web"
 import { createComponent, omit, untrack, type Element } from "solid-js"
 
-export type { ValidComponent } from "@solidjs/web"
-
-/**
- * Props of a part that renders a `T`, its own element unless the caller passes `as`. `as` takes another tag, or a
- * component that receives the part's props and spreads them onto its element. `P` wins over the props of `T`.
- *
- * @example
- * <Dialog.Trigger as={Button} variant="ghost">Open</Dialog.Trigger>
- */
-export type PartProps<T extends ValidComponent, P = {}> = P & { as?: T | undefined } & Omit<
-    ComponentProps<T>,
-    keyof P | "as"
-  >
+// Parts type their props as their callers type the props of a Polymorphic component
+export type { PolymorphicProps, ValidComponent } from "../polymorphic/polymorphic.js"
 
 /** Renders a part as the caller's `as`, or as a `tag` element */
 export function render(tag: string, props: object): Element {

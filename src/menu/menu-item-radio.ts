@@ -1,6 +1,6 @@
 import type * as menu from "@zag-js/menu"
 import { createMemo, merge, type Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
@@ -8,7 +8,7 @@ import { useMenuContext } from "./use-menu-context.js"
 import { useMenuGroupContext } from "./use-menu-group-context.js"
 import { MenuItemPropsProvider, MenuItemProvider } from "./use-menu-item-context.js"
 
-export type MenuItemRadioProps<As extends ValidComponent = "div"> = PartProps<As, menu.ItemProps>
+export type MenuItemRadioProps<As extends ValidComponent = "div"> = PolymorphicProps<As, menu.ItemProps>
 
 /** An item of a `Menu.Group.Radio`, checked while it holds the group's value */
 export function MenuItemRadio<As extends ValidComponent = "div">(props: MenuItemRadioProps<As>): Element {

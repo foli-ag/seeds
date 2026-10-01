@@ -1,9 +1,9 @@
 import { createEffect, type Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useCheckboxContext } from "./use-checkbox-context.js"
 
-export type CheckboxHiddenInputProps<As extends ValidComponent = "input"> = PartProps<As>
+export type CheckboxHiddenInputProps<As extends ValidComponent = "input"> = PolymorphicProps<As>
 
 /** The native checkbox that carries the value into forms and the state to assistive technology */
 export function CheckboxHiddenInput<As extends ValidComponent = "input">(props: CheckboxHiddenInputProps<As>): Element {

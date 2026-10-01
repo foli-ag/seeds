@@ -1,11 +1,11 @@
 import type { Element } from "solid-js"
 import { useCollapsibleContext } from "../collapsible/use-collapsible-context.js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useAccordionContext } from "./use-accordion-context.js"
 import { useAccordionItemPropsContext } from "./use-accordion-item-context.js"
 
-export type AccordionItemTriggerProps<As extends ValidComponent = "button"> = PartProps<As>
+export type AccordionItemTriggerProps<As extends ValidComponent = "button"> = PolymorphicProps<As>
 
 /** Opens and closes its item */
 export function AccordionItemTrigger<As extends ValidComponent = "button">(

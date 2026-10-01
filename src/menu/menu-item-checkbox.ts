@@ -1,13 +1,16 @@
 import type * as menu from "@zag-js/menu"
 import { createMemo, merge, type Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { provide } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import { useMenuContext } from "./use-menu-context.js"
 import { MenuItemPropsProvider, MenuItemProvider } from "./use-menu-item-context.js"
 
-export type MenuItemCheckboxProps<As extends ValidComponent = "div"> = PartProps<As, Omit<menu.OptionItemProps, "type">>
+export type MenuItemCheckboxProps<As extends ValidComponent = "div"> = PolymorphicProps<
+  As,
+  Omit<menu.OptionItemProps, "type">
+>
 
 /** An item that toggles `checked` */
 export function MenuItemCheckbox<As extends ValidComponent = "div">(props: MenuItemCheckboxProps<As>): Element {

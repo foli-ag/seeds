@@ -1,10 +1,10 @@
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { show } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { useComboboxContext } from "./use-combobox-context.js"
 
-export type ComboboxEmptyProps<As extends ValidComponent = "div"> = PartProps<As>
+export type ComboboxEmptyProps<As extends ValidComponent = "div"> = PolymorphicProps<As>
 
 /** Shown while the collection has no items, such as when nothing matches the input */
 export function ComboboxEmpty<As extends ValidComponent = "div">(props: ComboboxEmptyProps<As>): Element {

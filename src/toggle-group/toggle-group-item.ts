@@ -1,11 +1,11 @@
 import type * as toggleGroup from "@zag-js/toggle-group"
 import type { Element } from "solid-js"
-import { render, type PartProps, type ValidComponent } from "../utils/factory.js"
+import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
 import { mergeProps } from "../utils/merge-props.js"
 import { splitProps } from "../utils/split-props.js"
 import { useToggleGroupContext } from "./use-toggle-group-context.js"
 
-export type ToggleGroupItemProps<As extends ValidComponent = "button"> = PartProps<As, toggleGroup.ItemProps>
+export type ToggleGroupItemProps<As extends ValidComponent = "button"> = PolymorphicProps<As, toggleGroup.ItemProps>
 
 /** A toggle button whose `value` is in the group's value while pressed */
 export function ToggleGroupItem<As extends ValidComponent = "button">(props: ToggleGroupItemProps<As>): Element {
