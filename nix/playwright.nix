@@ -17,6 +17,9 @@
         PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = "1";
         # Playwright looks for Ubuntu system libraries, which the Nix builds link in themselves
         PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS = "true";
+        # Chromium aborts on its first text without a font configuration, which the build sandbox lacks. Pinning the
+        # fonts also lays text out the same on every machine.
+        FONTCONFIG_FILE = "${pkgs.makeFontsConf { fontDirectories = [ pkgs.dejavu_fonts ]; }}";
       };
     };
 }
