@@ -57,20 +57,21 @@ export function usePresence(props: MaybeAccessor<UsePresenceProps>): UsePresence
     return { present, immediate, onEnterComplete, onExitComplete }
   })
   const api = createMemo(() => presence.connect(service, normalizeProps))
-
-  // Latches on first open, after which lazyMount no longer holds the content back
-  const wasEverPresent = createMemo((prev: boolean | undefined) => prev || api().present)
+  const unmounted = useUnmounted(
+    () => access(props),
+    () => api().present,
+  )
 
   const ref = (node: HTMLElement | null) => {
     if (node) service.send({ type: "NODE.SET", node })
   }
 
   return createMemo(() => {
-    const { lazyMount, unmountOnExit, skipAnimationOnMount, present } = access(props)
+    const { skipAnimationOnMount, present } = access(props)
     const { present: shown, skip } = api()
     return {
       present: shown,
-      unmounted: !!((!shown && !wasEverPresent() && lazyMount) || (unmountOnExit && !shown && wasEverPresent())),
+      unmounted: unmounted(),
       presenceProps: {
         ref,
         hidden: !shown,
@@ -78,6 +79,17 @@ export function usePresence(props: MaybeAccessor<UsePresenceProps>): UsePresence
       },
     }
   })
+}
+
+/** Whether content that is `shown` or not stays out of the DOM under a render strategy */
+export function useUnmounted(strategy: Accessor<RenderStrategyProps>, shown: Accessor<boolean>): Accessor<boolean> {
+  // Latches on first show, after which lazyMount no longer holds the content back
+  const wasShown = createMemo((prev: boolean | undefined) => prev || shown())
+  return () => {
+    if (shown()) return false
+    const { lazyMount, unmountOnExit } = strategy()
+    return !!(wasShown() ? unmountOnExit : lazyMount)
+  }
 }
 
 export const PresenceContext = createContext<UsePresenceReturn>()
