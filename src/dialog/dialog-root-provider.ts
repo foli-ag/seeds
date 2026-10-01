@@ -1,14 +1,14 @@
 import { untrack, type Element } from "solid-js"
-import { provide } from "../utils/flow"
+import { provide } from "../utils/flow.js"
 import {
   PresenceContext,
   RenderStrategyContext,
   splitPresenceProps,
   usePresence,
   type UsePresenceProps,
-} from "../utils/presence"
-import type { UseDialogReturn } from "./use-dialog"
-import { DialogProvider } from "./use-dialog-context"
+} from "../utils/presence.js"
+import type { UseDialogReturn } from "./use-dialog.js"
+import { DialogProvider } from "./use-dialog-context.js"
 
 export interface DialogRootProviderProps extends Omit<UsePresenceProps, "present"> {
   /** What `useDialog` returned */

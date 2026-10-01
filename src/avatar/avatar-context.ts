@@ -1,6 +1,6 @@
 import { untrack, type Element } from "solid-js"
-import type { UseAvatarReturn } from "./use-avatar"
-import { useAvatarContext } from "./use-avatar-context"
+import type { UseAvatarReturn } from "./use-avatar.js"
+import { useAvatarContext } from "./use-avatar-context.js"
 
 export interface AvatarContextProps {
   children: (api: UseAvatarReturn) => Element

@@ -1,8 +1,8 @@
 import type { PropTypes } from "@foliag/zag"
 import * as dialog from "@zag-js/dialog"
 import type { Accessor } from "solid-js"
-import type { MaybeAccessor, Optional } from "../utils/types"
-import { useApi } from "../utils/use-api"
+import type { MaybeAccessor, Optional } from "../utils/types.js"
+import { useApi } from "../utils/use-api.js"
 
 export interface UseDialogProps extends Optional<dialog.Props, "id"> {}
 

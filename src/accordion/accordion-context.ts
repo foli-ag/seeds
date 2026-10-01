@@ -1,6 +1,6 @@
 import { untrack, type Element } from "solid-js"
-import type { UseAccordionReturn } from "./use-accordion"
-import { useAccordionContext } from "./use-accordion-context"
+import type { UseAccordionReturn } from "./use-accordion.js"
+import { useAccordionContext } from "./use-accordion-context.js"
 
 export interface AccordionContextProps {
   children: (api: UseAccordionReturn) => Element

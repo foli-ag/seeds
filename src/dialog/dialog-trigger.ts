@@ -1,10 +1,10 @@
 import type * as dialog from "@zag-js/dialog"
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory"
-import { mergeProps } from "../utils/merge-props"
-import { usePresenceContext } from "../utils/presence"
-import { splitProps } from "../utils/split-props"
-import { useDialogContext } from "./use-dialog-context"
+import { render, type PartProps } from "../utils/factory.js"
+import { mergeProps } from "../utils/merge-props.js"
+import { usePresenceContext } from "../utils/presence.js"
+import { splitProps } from "../utils/split-props.js"
+import { useDialogContext } from "./use-dialog-context.js"
 
 export interface DialogTriggerProps extends PartProps<"button", dialog.TriggerProps> {}
 

@@ -1,10 +1,10 @@
 import { untrack, type Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory"
-import { provide } from "../utils/flow"
-import { mergeProps } from "../utils/merge-props"
-import { splitProps } from "../utils/split-props"
-import type { UseCheckboxReturn } from "./use-checkbox"
-import { CheckboxProvider } from "./use-checkbox-context"
+import { render, type PartProps } from "../utils/factory.js"
+import { provide } from "../utils/flow.js"
+import { mergeProps } from "../utils/merge-props.js"
+import { splitProps } from "../utils/split-props.js"
+import type { UseCheckboxReturn } from "./use-checkbox.js"
+import { CheckboxProvider } from "./use-checkbox-context.js"
 
 export interface CheckboxRootProviderProps extends PartProps<"label", { value: UseCheckboxReturn }> {}
 

@@ -1,9 +1,9 @@
 import type { PropTypes } from "@foliag/zag"
 import * as collapsible from "@zag-js/collapsible"
 import { createMemo, type Accessor } from "solid-js"
-import { useUnmounted, type RenderStrategyProps } from "../utils/presence"
-import { access, type MaybeAccessor, type Optional } from "../utils/types"
-import { useApi } from "../utils/use-api"
+import { useUnmounted, type RenderStrategyProps } from "../utils/presence.js"
+import { access, type MaybeAccessor, type Optional } from "../utils/types.js"
+import { useApi } from "../utils/use-api.js"
 
 export interface UseCollapsibleProps extends Optional<collapsible.Props, "id">, RenderStrategyProps {}
 

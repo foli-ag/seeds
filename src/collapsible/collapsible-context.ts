@@ -1,6 +1,6 @@
 import { untrack, type Element } from "solid-js"
-import type { UseCollapsibleReturn } from "./use-collapsible"
-import { useCollapsibleContext } from "./use-collapsible-context"
+import type { UseCollapsibleReturn } from "./use-collapsible.js"
+import { useCollapsibleContext } from "./use-collapsible-context.js"
 
 export interface CollapsibleContextProps {
   children: (api: UseCollapsibleReturn) => Element

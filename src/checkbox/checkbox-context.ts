@@ -1,6 +1,6 @@
 import { untrack, type Element } from "solid-js"
-import type { UseCheckboxReturn } from "./use-checkbox"
-import { useCheckboxContext } from "./use-checkbox-context"
+import type { UseCheckboxReturn } from "./use-checkbox.js"
+import { useCheckboxContext } from "./use-checkbox-context.js"
 
 export interface CheckboxContextProps {
   children: (api: UseCheckboxReturn) => Element

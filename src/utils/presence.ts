@@ -1,8 +1,8 @@
 import { normalizeProps, useMachine } from "@foliag/zag"
 import * as presence from "@zag-js/presence"
 import { createContext, createMemo, useContext, type Accessor } from "solid-js"
-import { splitProps } from "./split-props"
-import { access, type MaybeAccessor } from "./types"
+import { splitProps } from "./split-props.js"
+import { access, type MaybeAccessor } from "./types.js"
 
 export interface RenderStrategyProps {
   /** Mounts the content the first time it opens instead of with the root */
@@ -92,11 +92,11 @@ export function useUnmounted(strategy: Accessor<RenderStrategyProps>, shown: Acc
   }
 }
 
-export const PresenceContext = createContext<UsePresenceReturn>()
+export const PresenceContext = /* @__PURE__ */ createContext<UsePresenceReturn>()
 
 export const usePresenceContext = () => useContext(PresenceContext)
 
 /** How a root wants its content mounted, for parts that run a presence of their own (a dialog's backdrop) */
-export const RenderStrategyContext = createContext<Accessor<RenderStrategyProps>>()
+export const RenderStrategyContext = /* @__PURE__ */ createContext<Accessor<RenderStrategyProps>>()
 
 export const useRenderStrategyContext = () => useContext(RenderStrategyContext)

@@ -10,20 +10,36 @@ export default defineConfig({
   optimizeDeps: {
     include: Object.keys(pkg.dependencies),
   },
-  test: {
-    globals: true,
-    include: ["tests/**/*.test.{ts,tsx}"],
-    setupFiles: "./vitest.setup.ts",
-    // Positioning, focus trapping and outside clicks need real layout and input, which jsdom lacks
-    browser: {
-      enabled: true,
-      headless: true,
-      provider: playwright(),
-      instances: [{ browser: "chromium" }],
-      screenshotFailures: false,
-    },
-  },
   resolve: {
     conditions: ["development", "browser"],
+  },
+  test: {
+    globals: true,
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: "components",
+          include: ["tests/**/*.test.tsx"],
+          setupFiles: "./vitest.setup.ts",
+          // Positioning, focus trapping and outside clicks need real layout and input, which jsdom lacks
+          browser: {
+            enabled: true,
+            headless: true,
+            provider: playwright(),
+            instances: [{ browser: "chromium" }],
+            screenshotFailures: false,
+          },
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: "bundle",
+          include: ["tests/**/*.test.ts"],
+          environment: "node",
+        },
+      },
+    ],
   },
 })

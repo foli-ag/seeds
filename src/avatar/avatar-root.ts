@@ -1,11 +1,11 @@
 import * as avatar from "@zag-js/avatar"
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory"
-import { provide } from "../utils/flow"
-import { mergeProps } from "../utils/merge-props"
-import { splitProps } from "../utils/split-props"
-import { useAvatar, type UseAvatarProps } from "./use-avatar"
-import { AvatarProvider } from "./use-avatar-context"
+import { render, type PartProps } from "../utils/factory.js"
+import { provide } from "../utils/flow.js"
+import { mergeProps } from "../utils/merge-props.js"
+import { splitProps } from "../utils/split-props.js"
+import { useAvatar, type UseAvatarProps } from "./use-avatar.js"
+import { AvatarProvider } from "./use-avatar-context.js"
 
 export interface AvatarRootProps extends PartProps<"div", UseAvatarProps> {}
 

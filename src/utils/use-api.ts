@@ -3,7 +3,7 @@ import type { Machine, MachineSchema, Service } from "@zag-js/core"
 import type { NormalizeProps } from "@zag-js/types"
 import { compact } from "@zag-js/utils"
 import { createMemo, createUniqueId, type Accessor } from "solid-js"
-import { access, type MaybeAccessor } from "./types"
+import { access, type MaybeAccessor } from "./types.js"
 
 /**
  * Runs `machine` with a generated id unless `props` has one, and connects it to Solid.

@@ -1,3 +1,3 @@
-export * as Avatar from "./avatar"
-export { useAvatar, type UseAvatarProps, type UseAvatarReturn } from "./use-avatar"
-export { useAvatarContext } from "./use-avatar-context"
+export * as Avatar from "./avatar.js"
+export { useAvatar, type UseAvatarProps, type UseAvatarReturn } from "./use-avatar.js"
+export { useAvatarContext } from "./use-avatar-context.js"

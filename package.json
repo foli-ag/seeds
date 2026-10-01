@@ -57,7 +57,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "format": "biome format --write .",
@@ -99,7 +99,6 @@
     "@vitest/browser-playwright": "4.1.11",
     "playwright": "1.63.0",
     "solid-js": "2.0.0-rc.9",
-    "tsup": "8.5.1",
     "typescript": "6.0.3",
     "vite": "8.2.1",
     "vitest": "4.1.11"

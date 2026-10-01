@@ -1,5 +1,5 @@
 import { untrack, type Element } from "solid-js"
-import { useAccordionItemContext, type UseAccordionItemContext } from "./use-accordion-item-context"
+import { useAccordionItemContext, type UseAccordionItemContext } from "./use-accordion-item-context.js"
 
 export interface AccordionItemContextProps {
   children: (item: UseAccordionItemContext) => Element

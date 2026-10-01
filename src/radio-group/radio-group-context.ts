@@ -1,6 +1,6 @@
 import { untrack, type Element } from "solid-js"
-import type { UseRadioGroupReturn } from "./use-radio-group"
-import { useRadioGroupContext } from "./use-radio-group-context"
+import type { UseRadioGroupReturn } from "./use-radio-group.js"
+import { useRadioGroupContext } from "./use-radio-group-context.js"
 
 export interface RadioGroupContextProps {
   children: (api: UseRadioGroupReturn) => Element

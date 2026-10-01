@@ -1,12 +1,12 @@
 import * as accordion from "@zag-js/accordion"
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory"
-import { provide } from "../utils/flow"
-import { mergeProps } from "../utils/merge-props"
-import { RenderStrategyContext, renderStrategyKeys, type RenderStrategyProps } from "../utils/presence"
-import { splitProps } from "../utils/split-props"
-import { useAccordion, type UseAccordionProps } from "./use-accordion"
-import { AccordionProvider } from "./use-accordion-context"
+import { render, type PartProps } from "../utils/factory.js"
+import { provide } from "../utils/flow.js"
+import { mergeProps } from "../utils/merge-props.js"
+import { RenderStrategyContext, renderStrategyKeys, type RenderStrategyProps } from "../utils/presence.js"
+import { splitProps } from "../utils/split-props.js"
+import { useAccordion, type UseAccordionProps } from "./use-accordion.js"
+import { AccordionProvider } from "./use-accordion-context.js"
 
 export interface AccordionRootProps extends PartProps<"div", UseAccordionProps & RenderStrategyProps> {}
 

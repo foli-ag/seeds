@@ -1,8 +1,8 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory"
-import { mergeProps } from "../utils/merge-props"
-import { useAccordionContext } from "./use-accordion-context"
-import { useAccordionItemPropsContext } from "./use-accordion-item-context"
+import { render, type PartProps } from "../utils/factory.js"
+import { mergeProps } from "../utils/merge-props.js"
+import { useAccordionContext } from "./use-accordion-context.js"
+import { useAccordionItemPropsContext } from "./use-accordion-item-context.js"
 
 export interface AccordionItemIndicatorProps extends PartProps<"div"> {}
 

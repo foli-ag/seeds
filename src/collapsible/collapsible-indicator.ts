@@ -1,7 +1,7 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory"
-import { mergeProps } from "../utils/merge-props"
-import { useCollapsibleContext } from "./use-collapsible-context"
+import { render, type PartProps } from "../utils/factory.js"
+import { mergeProps } from "../utils/merge-props.js"
+import { useCollapsibleContext } from "./use-collapsible-context.js"
 
 export interface CollapsibleIndicatorProps extends PartProps<"div"> {}
 

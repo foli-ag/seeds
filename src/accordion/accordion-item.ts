@@ -1,13 +1,13 @@
 import type * as accordion from "@zag-js/accordion"
 import { createComponent, createMemo, untrack, type Element } from "solid-js"
-import { CollapsibleRoot, type CollapsibleRootProps } from "../collapsible/collapsible-root"
-import type { PartProps } from "../utils/factory"
-import { provide } from "../utils/flow"
-import { mergeProps } from "../utils/merge-props"
-import { useRenderStrategyContext } from "../utils/presence"
-import { splitProps } from "../utils/split-props"
-import { useAccordionContext } from "./use-accordion-context"
-import { AccordionItemPropsProvider, AccordionItemProvider } from "./use-accordion-item-context"
+import { CollapsibleRoot, type CollapsibleRootProps } from "../collapsible/collapsible-root.js"
+import type { PartProps } from "../utils/factory.js"
+import { provide } from "../utils/flow.js"
+import { mergeProps } from "../utils/merge-props.js"
+import { useRenderStrategyContext } from "../utils/presence.js"
+import { splitProps } from "../utils/split-props.js"
+import { useAccordionContext } from "./use-accordion-context.js"
+import { AccordionItemPropsProvider, AccordionItemProvider } from "./use-accordion-item-context.js"
 
 export interface AccordionItemProps extends PartProps<"div", accordion.ItemProps> {}
 

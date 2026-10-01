@@ -1,9 +1,9 @@
 import { createComponent, type Element } from "solid-js"
-import { CollapsibleContent } from "../collapsible/collapsible-content"
-import type { PartProps } from "../utils/factory"
-import { mergeProps } from "../utils/merge-props"
-import { useAccordionContext } from "./use-accordion-context"
-import { useAccordionItemPropsContext } from "./use-accordion-item-context"
+import { CollapsibleContent } from "../collapsible/collapsible-content.js"
+import type { PartProps } from "../utils/factory.js"
+import { mergeProps } from "../utils/merge-props.js"
+import { useAccordionContext } from "./use-accordion-context.js"
+import { useAccordionItemPropsContext } from "./use-accordion-item-context.js"
 
 export interface AccordionItemContentProps extends PartProps<"div"> {}
 

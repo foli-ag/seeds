@@ -1,11 +1,11 @@
 import * as zagSwitch from "@zag-js/switch"
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory"
-import { provide } from "../utils/flow"
-import { mergeProps } from "../utils/merge-props"
-import { splitProps } from "../utils/split-props"
-import { useSwitch, type UseSwitchProps } from "./use-switch"
-import { SwitchProvider } from "./use-switch-context"
+import { render, type PartProps } from "../utils/factory.js"
+import { provide } from "../utils/flow.js"
+import { mergeProps } from "../utils/merge-props.js"
+import { splitProps } from "../utils/split-props.js"
+import { useSwitch, type UseSwitchProps } from "./use-switch.js"
+import { SwitchProvider } from "./use-switch-context.js"
 
 export interface SwitchRootProps extends PartProps<"label", UseSwitchProps> {}
 

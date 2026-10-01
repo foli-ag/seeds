@@ -1,7 +1,7 @@
 import type { Element } from "solid-js"
-import { render, type PartProps } from "../utils/factory"
-import { mergeProps } from "../utils/merge-props"
-import { useAvatarContext } from "./use-avatar-context"
+import { render, type PartProps } from "../utils/factory.js"
+import { mergeProps } from "../utils/merge-props.js"
+import { useAvatarContext } from "./use-avatar-context.js"
 
 export interface AvatarImageProps extends PartProps<"img"> {}
 

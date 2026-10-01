@@ -1,6 +1,6 @@
 import { untrack, type Element } from "solid-js"
-import type { UseDialogReturn } from "./use-dialog"
-import { useDialogContext } from "./use-dialog-context"
+import type { UseDialogReturn } from "./use-dialog.js"
+import { useDialogContext } from "./use-dialog-context.js"
 
 export interface DialogContextProps {
   children: (api: UseDialogReturn) => Element

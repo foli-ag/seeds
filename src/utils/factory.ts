@@ -1,6 +1,6 @@
 import { dynamic, type JSX } from "@solidjs/web"
 import { createComponent, omit, untrack, type Element } from "solid-js"
-import { mergeProps } from "./merge-props"
+import { mergeProps } from "./merge-props.js"
 
 export type ElementType = keyof JSX.IntrinsicElements
 
