@@ -5,7 +5,8 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UseSelectProps<T extends CollectionItem = any> extends Optional<select.Props<T>, "id"> {}
+export interface UseSelectProps<T extends CollectionItem = any>
+  extends Optional<Omit<select.Props<T>, "getRootNode">, "id"> {}
 
 export type UseSelectReturn<T extends CollectionItem = any> = Accessor<select.Api<PropTypes, T>>
 

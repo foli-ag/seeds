@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UseAvatarProps extends Optional<avatar.Props, "id"> {}
+export interface UseAvatarProps extends Optional<Omit<avatar.Props, "getRootNode">, "id"> {}
 
 export type UseAvatarReturn = Accessor<avatar.Api<PropTypes>>
 

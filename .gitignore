@@ -3,3 +3,4 @@ dist
 result*
 .direnv
 COMPONENTS.md
+.claude/worktrees
