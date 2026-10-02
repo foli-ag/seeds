@@ -80,6 +80,10 @@
       "types": "./dist/radio-group/index.d.ts",
       "default": "./dist/radio-group/index.js"
     },
+    "./rating-group": {
+      "types": "./dist/rating-group/index.d.ts",
+      "default": "./dist/rating-group/index.js"
+    },
     "./select": {
       "types": "./dist/select/index.d.ts",
       "default": "./dist/select/index.js"
@@ -147,6 +151,7 @@
     "@zag-js/popover": "1.44.0",
     "@zag-js/presence": "1.44.0",
     "@zag-js/radio-group": "1.44.0",
+    "@zag-js/rating-group": "1.44.0",
     "@zag-js/select": "1.44.0",
     "@zag-js/slider": "1.44.0",
     "@zag-js/splitter": "1.44.0",
