@@ -106,8 +106,10 @@ The tests run in a real browser because positioning, focus trapping and outside 
 Playwright only drives browsers from its own release, so the `playwright` devDependency stays at the version of
 `playwright-driver` in the locked nixpkgs. Update both together.
 
-`nix flake check` builds the package and runs the typecheck and the tests in the sandbox. After changing `bun.lock`,
-set `outputHash` of `bunDeps` in `nix/package.nix` to `lib.fakeHash`, run `nix build` and paste the hash it reports.
+`nix flake check` builds the package and runs the typecheck and the tests in the sandbox. The build fetches each
+package `bun.lock` pins with the hash the lockfile records for it, through [bun2nix](https://github.com/nix-community/bun2nix),
+so changing dependencies needs nothing beyond `bun install`. Two branches that both add a dependency conflict in
+`bun.lock` at most, and `bun install` resolves it.
 
 CI runs `nix flake check` on pushes to `main` and on pull requests.
 
