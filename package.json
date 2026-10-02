@@ -32,9 +32,17 @@
       "types": "./dist/avatar/index.d.ts",
       "default": "./dist/avatar/index.js"
     },
+    "./carousel": {
+      "types": "./dist/carousel/index.d.ts",
+      "default": "./dist/carousel/index.js"
+    },
     "./checkbox": {
       "types": "./dist/checkbox/index.d.ts",
       "default": "./dist/checkbox/index.js"
+    },
+    "./clipboard": {
+      "types": "./dist/clipboard/index.d.ts",
+      "default": "./dist/clipboard/index.js"
     },
     "./collapsible": {
       "types": "./dist/collapsible/index.d.ts",
@@ -52,6 +60,14 @@
       "types": "./dist/drawer/index.d.ts",
       "default": "./dist/drawer/index.js"
     },
+    "./editable": {
+      "types": "./dist/editable/index.d.ts",
+      "default": "./dist/editable/index.js"
+    },
+    "./environment": {
+      "types": "./dist/environment/index.d.ts",
+      "default": "./dist/environment/index.js"
+    },
     "./hover-card": {
       "types": "./dist/hover-card/index.d.ts",
       "default": "./dist/hover-card/index.js"
@@ -63,6 +79,10 @@
     "./navigation-menu": {
       "types": "./dist/navigation-menu/index.d.ts",
       "default": "./dist/navigation-menu/index.js"
+    },
+    "./pagination": {
+      "types": "./dist/pagination/index.d.ts",
+      "default": "./dist/pagination/index.js"
     },
     "./password-input": {
       "types": "./dist/password-input/index.d.ts",
@@ -80,9 +100,17 @@
       "types": "./dist/popover/index.d.ts",
       "default": "./dist/popover/index.js"
     },
+    "./presence": {
+      "types": "./dist/presence/index.d.ts",
+      "default": "./dist/presence/index.js"
+    },
     "./radio-group": {
       "types": "./dist/radio-group/index.d.ts",
       "default": "./dist/radio-group/index.js"
+    },
+    "./rating-group": {
+      "types": "./dist/rating-group/index.d.ts",
+      "default": "./dist/rating-group/index.js"
     },
     "./select": {
       "types": "./dist/select/index.d.ts",
@@ -99,6 +127,10 @@
     "./steps": {
       "types": "./dist/steps/index.d.ts",
       "default": "./dist/steps/index.js"
+    },
+    "./swap": {
+      "types": "./dist/swap/index.d.ts",
+      "default": "./dist/swap/index.js"
     },
     "./switch": {
       "types": "./dist/switch/index.d.ts",
@@ -120,6 +152,10 @@
       "types": "./dist/tooltip/index.d.ts",
       "default": "./dist/tooltip/index.js"
     },
+    "./tree-view": {
+      "types": "./dist/tree-view/index.d.ts",
+      "default": "./dist/tree-view/index.js"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
@@ -133,25 +169,31 @@
     "prepublishOnly": "bun run build"
   },
   "dependencies": {
-    "@foliag/zag": "^0.1.0",
+    "@foliag/zag": "^0.1.1",
     "@zag-js/accordion": "1.44.0",
     "@zag-js/angle-slider": "1.44.0",
     "@zag-js/avatar": "1.44.0",
+    "@zag-js/carousel": "1.44.0",
     "@zag-js/checkbox": "1.44.0",
+    "@zag-js/clipboard": "1.44.0",
     "@zag-js/collapsible": "1.44.0",
     "@zag-js/collection": "1.44.0",
     "@zag-js/combobox": "1.44.0",
     "@zag-js/core": "1.44.0",
     "@zag-js/dialog": "1.44.0",
+    "@zag-js/dom-query": "1.44.0",
     "@zag-js/drawer": "1.44.0",
+    "@zag-js/editable": "1.44.0",
     "@zag-js/hover-card": "1.44.0",
     "@zag-js/menu": "1.44.0",
     "@zag-js/navigation-menu": "1.44.0",
+    "@zag-js/pagination": "1.44.0",
     "@zag-js/password-input": "1.44.0",
     "@zag-js/pin-input": "1.44.0",
     "@zag-js/popover": "1.44.0",
     "@zag-js/presence": "1.44.0",
     "@zag-js/radio-group": "1.44.0",
+    "@zag-js/rating-group": "1.44.0",
     "@zag-js/select": "1.44.0",
     "@zag-js/slider": "1.44.0",
     "@zag-js/splitter": "1.44.0",
@@ -161,6 +203,7 @@
     "@zag-js/toggle": "1.44.0",
     "@zag-js/toggle-group": "1.44.0",
     "@zag-js/tooltip": "1.44.0",
+    "@zag-js/tree-view": "1.44.0",
     "@zag-js/types": "1.44.0",
     "@zag-js/utils": "1.44.0"
   },

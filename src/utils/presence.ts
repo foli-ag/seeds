@@ -21,6 +21,11 @@ export interface PresenceApi {
   present: boolean
   /** Whether the content is out of the DOM */
   unmounted: boolean
+  /**
+   * Gives presence the element whose animations it waits for, as Ark's `ref`. `presenceProps` carries it too. Solid
+   * reads a JSX `ref` untracked and warns on `ref={presence().ref}`, so pass `(node) => presence().ref(node)` instead.
+   */
+  ref: (node: HTMLElement | null) => void
   /** Props for the element whose animations presence waits for */
   presenceProps: {
     ref: (node: HTMLElement | null) => void
@@ -72,6 +77,7 @@ export function usePresence(props: MaybeAccessor<UsePresenceProps>): UsePresence
     return {
       present: shown,
       unmounted: unmounted(),
+      ref,
       presenceProps: {
         ref,
         hidden: !shown,

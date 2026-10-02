@@ -21,7 +21,8 @@ beforeAll(async () => {
 
 const machines = Object.keys(pkg.dependencies).filter(
   (name) =>
-    name.startsWith("@zag-js/") && !["core", "types", "utils", "presence", "collection"].includes(name.slice(8)),
+    name.startsWith("@zag-js/") &&
+    !["core", "types", "utils", "dom-query", "presence", "collection"].includes(name.slice(8)),
 )
 
 test("brings in no other component than the one imported", async () => {

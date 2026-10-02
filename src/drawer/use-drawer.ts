@@ -5,7 +5,7 @@ import { access, type MaybeAccessor, type Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 import { DrawerStackStoreProvider } from "./use-drawer-stack-context.js"
 
-export interface UseDrawerProps extends Optional<drawer.Props, "id"> {}
+export interface UseDrawerProps extends Optional<Omit<drawer.Props, "getRootNode">, "id"> {}
 
 export type UseDrawerReturn = Accessor<drawer.Api<PropTypes>>
 
