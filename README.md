@@ -57,25 +57,8 @@ hook, and a `Context` part that renders its children with the API.
 Each one is imported from its own subpath, such as `@foliag/seeds/radio-group`. There is no root entry, so a server
 or a dev server, which do not tree-shake, load only the components a page imports.
 
-| Seeds | Name in the Svelte bloom | Zag.js machine |
-|---|---|---|
-| `Accordion` | `Accordion` | accordion, collapsible |
-| `Avatar` | `Avatar` | avatar |
-| `Checkbox` | `Checkbox` | checkbox |
-| `Collapsible` | `Collapsible` | collapsible |
-| `Combobox` | `Combobox` | combobox |
-| `Dialog` | `Dialog`, and `AlertDialog` as `<Dialog.Root role="alertdialog">` | dialog |
-| `Drawer` | none | drawer |
-| `Menu` | `DropdownMenu` | menu |
-| `NavigationMenu` | `NavigationMenu` | navigation-menu |
-| `Popover` | `Popover` | popover |
-| `RadioGroup` | `RadioGroup` | radio-group |
-| `Select` | `Select` | select |
-| `Slider` | `Slider` | slider |
-| `Steps` | `Stepper` | steps |
-| `Switch` | `Switch` | switch |
-| `Toggle` | none | toggle |
-| `ToggleGroup` | `ToggleGroup` | toggle-group |
+The subpaths are listed in `package.json` `exports`, each named after the zag machine the component runs. An alert
+dialog is `<Dialog.Root role="alertdialog">`, as in Ark.
 
 Select and Combobox take a collection from `createListCollection`, exported next to them.
 
