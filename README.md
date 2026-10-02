@@ -60,7 +60,8 @@ or a dev server, which do not tree-shake, load only the components a page import
 The subpaths are listed in `package.json` `exports`, each named after the zag machine the component runs. An alert
 dialog is `<Dialog.Root role="alertdialog">`, as in Ark.
 
-Select and Combobox take a collection from `createListCollection`, exported next to them.
+Select and Combobox take a collection from `createListCollection`, exported next to them. TreeView takes one from
+`createTreeCollection`, exported next to it.
 
 ## Tree-shaking
 
