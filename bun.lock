@@ -7,6 +7,7 @@
       "dependencies": {
         "@foliag/zag": "^0.1.0",
         "@zag-js/accordion": "1.44.0",
+        "@zag-js/angle-slider": "1.44.0",
         "@zag-js/avatar": "1.44.0",
         "@zag-js/checkbox": "1.44.0",
         "@zag-js/collapsible": "1.44.0",
@@ -245,6 +246,8 @@
     "@zag-js/accordion": ["@zag-js/accordion@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-BRinHGl7Z2K8maQKzr8txpU+1GC78nn8pV74Ox0jVJwpDvXzB4485qwdSHESyLBCbgFOd1qpfxRd7QbRiYM4Zg=="],
 
     "@zag-js/anatomy": ["@zag-js/anatomy@1.44.0", "", {}, "sha512-gVN02k7cUqEDlEDDv3CcStMIqDQ32e7QCH8FVBwwXqbSH8D5KMuqPrmyfdE8irVZuPfY4PtKuZsNvJLYvXDpgA=="],
+
+    "@zag-js/angle-slider": ["@zag-js/angle-slider@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/rect-utils": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-u00pEPCKstO3L1nvpcefgo/xV6skGWpG5jkqtbps3TFkTUHF0hfYpJABgHop27KhC5dbd5uQhMuQ9/T+NLnc5Q=="],
 
     "@zag-js/aria-hidden": ["@zag-js/aria-hidden@1.44.0", "", { "dependencies": { "@zag-js/dom-query": "1.44.0" } }, "sha512-sk9Zh93piT6NdXL0EW45fvhjrwSHjjPxeKOG+y68731Dqk0sdmP6/E1XQDwXiLhVLDySJ8PhGX8B7Zp+ZiZOIQ=="],
 
