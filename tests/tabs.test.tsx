@@ -1,6 +1,7 @@
 import { render } from "@solidjs/testing-library"
 import { createSignal } from "solid-js"
 import { page, userEvent } from "vitest/browser"
+import { usePresenceContext } from "../src/presence/index.js"
 import { Tabs, useTabs } from "../src/tabs/index.js"
 
 function Sections() {
@@ -100,6 +101,34 @@ test("mounts contents as the root's lazyMount and unmountOnExit say", async () =
   await userEvent.click(tab("Billing"))
   await expect.poll(() => content("Billing settings")).toBeDefined()
   await expect.poll(() => content("Account settings")).toBeUndefined()
+})
+
+test("gives each content's presence to its children", async () => {
+  function Status(props: { name: string }) {
+    const presence = usePresenceContext()
+    return <>{`${props.name} ${presence().present ? "shown" : "gone"}`}</>
+  }
+  render(() => (
+    <Tabs.Root defaultValue="account">
+      <Tabs.List aria-label="Settings">
+        <Tabs.Trigger value="account">Account</Tabs.Trigger>
+        <Tabs.Trigger value="billing">Billing</Tabs.Trigger>
+      </Tabs.List>
+      <Tabs.Content value="account">
+        <Status name="Account" />
+      </Tabs.Content>
+      <Tabs.Content value="billing">
+        <Status name="Billing" />
+      </Tabs.Content>
+    </Tabs.Root>
+  ))
+
+  await expect.poll(() => content("Account shown")).toBeDefined()
+  expect(content("Billing gone")).toBeDefined()
+
+  await userEvent.click(tab("Billing"))
+  await expect.poll(() => content("Billing shown")).toBeDefined()
+  await expect.poll(() => content("Account gone")).toBeDefined()
 })
 
 test("moves the indicator to the selected tab", async () => {

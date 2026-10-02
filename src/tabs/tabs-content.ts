@@ -1,15 +1,15 @@
 import type * as tabs from "@zag-js/tabs"
 import type { Element } from "solid-js"
 import { render, type PolymorphicProps, type ValidComponent } from "../utils/factory.js"
-import { show } from "../utils/flow.js"
+import { provide, show } from "../utils/flow.js"
 import { mergeProps } from "../utils/merge-props.js"
-import { usePresence, useRenderStrategyContext } from "../utils/presence.js"
+import { PresenceContext, usePresence, useRenderStrategyContext } from "../utils/presence.js"
 import { splitProps } from "../utils/split-props.js"
 import { useTabsContext } from "./use-tabs-context.js"
 
 export type TabsContentProps<As extends ValidComponent = "div"> = PolymorphicProps<As, tabs.ContentProps>
 
-/** The tabpanel shown while the trigger with the same `value` is selected */
+/** The tabpanel shown while the trigger with the same `value` is selected. Its children read its presence. */
 export function TabsContent<As extends ValidComponent = "div">(props: TabsContentProps<As>): Element {
   const [contentProps, localProps] = splitProps(props, ["value"])
   const api = useTabsContext()
@@ -21,8 +21,10 @@ export function TabsContent<As extends ValidComponent = "div">(props: TabsConten
     () => presence().presenceProps,
     localProps,
   )
-  return show(
-    () => !presence().unmounted,
-    () => render("div", merged),
+  return provide(PresenceContext, presence, () =>
+    show(
+      () => !presence().unmounted,
+      () => render("div", merged),
+    ),
   )
 }
