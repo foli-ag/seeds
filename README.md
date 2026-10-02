@@ -65,6 +65,7 @@ or a dev server, which do not tree-shake, load only the components a page import
 | `Collapsible` | `Collapsible` | collapsible |
 | `Combobox` | `Combobox` | combobox |
 | `Dialog` | `Dialog`, and `AlertDialog` as `<Dialog.Root role="alertdialog">` | dialog |
+| `Drawer` | none | drawer |
 | `Menu` | `DropdownMenu` | menu |
 | `NavigationMenu` | `NavigationMenu` | navigation-menu |
 | `Popover` | `Popover` | popover |
