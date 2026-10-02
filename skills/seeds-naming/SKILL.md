@@ -18,11 +18,15 @@ everything that lives in an item, without knowing a name beforehand.
    noun stays one word (`IndentGuide`, `ValueText`).
 2. **Triggers that act on the root's state nest under `Trigger`,** whatever Ark's name: `Trigger.Open`,
    `Trigger.Close`, `Trigger.Clear`, `Trigger.Context`, `Trigger.Prev`, `Trigger.Next`. A trigger owned by an item or
-   branch follows rule 1 instead: `Item.Trigger`, `Branch.Trigger`.
-3. **`Trigger` and `Trigger.Open` are the same component** (same reference,
-   `Object.assign(Trigger, { Open: Trigger, ... })`). The bare form is canonical and used in examples. This is the only
-   alias; no other part is exported under two names. Where the root has nothing to open (Steps), `Trigger` is a
-   namespace with no bare form, and `<Steps.Trigger>` is a type error.
+   branch follows rule 1 instead: `Item.Trigger`, `Branch.Trigger`. So does a trigger that belongs to something other
+   than the root's state: Tabs' `Trigger` selects its own `value`, and Splitter's `ResizeTrigger` sits between the
+   two panels its id names. Both keep Ark's names.
+3. **`Trigger.Open` exists only next to other root triggers, and is `Trigger` itself.** When the root has triggers
+   besides the one that opens it (`Close`, `Clear`, `Context`), the opener is also `Trigger.Open`, the same reference
+   (`Object.assign(Trigger, { Open: Trigger, Close: TriggerClose })`), so `Trigger.` lists every trigger. A lone trigger
+   is a plain `Trigger` with no members, as in Collapsible, Tooltip and HoverCard. The bare form is canonical and used
+   in examples. This is the only alias; no other part is exported under two names. Where the root has nothing to open
+   (Steps), `Trigger` is a namespace with no bare form, and `<Steps.Trigger>` is a type error.
 4. **`Item` holds two kinds of members.** What lives inside an item: `Item.Text`, `Item.Indicator`, `Item.Trigger`,
    `Item.Content`. And kinds of item, each replacing a plain `Item`: `Item.Checkbox`, `Item.Radio`, `Item.Submenu`.
    Steps' step button is unprefixed in Ark but sits inside the item, so it is `Steps.Item.Trigger`.
@@ -32,7 +36,8 @@ everything that lives in an item, without knowing a name beforehand.
    `Description`, `Input`, `Indicator`, `Separator`, `List`, `Empty`, `ValueText`, `Anchor`. A part does not nest
    just because it has to sit inside another. Steps' `Indicator` and `Separator` read the item around them and stay
    flat, and so do Slider's `HiddenInput` and `DraggingIndicator` inside a thumb. Only rules 2 and 4 move a part Ark
-   leaves unprefixed.
+   leaves unprefixed. Only `ItemGroup` becomes `Group` (rule 5); any other group keeps Ark's compound name, like
+   Slider's `MarkerGroup`.
 7. **Parts are never folded.** `Backdrop`, `Positioner` and `Content` stay separate parts, each with its own props for
    configuration. No part renders several of them.
 8. **The DOM contract is zag's and never renamed.** `data-scope` / `data-part` keep zag's values, kebab-cased from the
