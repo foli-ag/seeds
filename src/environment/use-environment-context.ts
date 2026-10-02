@@ -1,4 +1,4 @@
-import { createContext, useContext } from "solid-js"
+import { createContext, useContext, type Accessor } from "solid-js"
 
 /** Where the machines inside an `EnvironmentProvider` look up their elements */
 export interface EnvironmentContext {
@@ -12,14 +12,14 @@ export interface EnvironmentContext {
 
 export type RootNode = ShadowRoot | Document | Node
 
-/** The environment of the nearest `EnvironmentProvider`. It never changes, and its getters read the DOM when called. */
-export function useEnvironmentContext(): EnvironmentContext {
+/** The environment of the nearest `EnvironmentProvider`, whose getters read the DOM when called */
+export function useEnvironmentContext(): Accessor<EnvironmentContext> {
   return useContext(EnvironmentContextProvider)
 }
 
 // Outside a provider, machines look up their elements in the page's document, as zag does without `getRootNode`
-export const EnvironmentContextProvider = /* @__PURE__ */ createContext<EnvironmentContext>({
+export const EnvironmentContextProvider = /* @__PURE__ */ createContext<Accessor<EnvironmentContext>>(() => ({
   getRootNode: () => document,
   getDocument: () => document,
   getWindow: () => window,
-})
+}))

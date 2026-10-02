@@ -34,7 +34,7 @@ export function useService<S extends MachineSchema>(machine: Machine<S>, props: 
     () =>
       ({
         id,
-        getRootNode: environment.getRootNode,
+        getRootNode: environment().getRootNode,
         ...compact(access(props) as Record<string, unknown>),
       }) as Partial<S["props"]>,
   )

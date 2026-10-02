@@ -27,17 +27,21 @@ export function EnvironmentProvider(props: EnvironmentProviderProps): Element {
     getDocument: () => getDocument(getRootNode()),
     getWindow: () => getWindow(getRootNode()),
   }
-  return provide(EnvironmentContextProvider, environment, () => [
-    props.children,
-    show(
-      () => !props.value,
-      () =>
-        render("span", {
-          hidden: true,
-          ref: (node: HTMLSpanElement) => {
-            span = node
-          },
-        }),
-    ),
-  ])
+  return provide(
+    EnvironmentContextProvider,
+    () => environment,
+    () => [
+      props.children,
+      show(
+        () => !props.value,
+        () =>
+          render("span", {
+            hidden: true,
+            ref: (node: HTMLSpanElement) => {
+              span = node
+            },
+          }),
+      ),
+    ],
+  )
 }

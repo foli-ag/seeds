@@ -81,8 +81,8 @@ import { EnvironmentProvider } from "@foliag/seeds/environment"
 Pass `value`, a root node or a function that returns one, to name the root node yourself. Seeds calls the function only
 when a machine looks up an element, in the browser, so it can return a node the server does not have. Pass the same
 kind of `value` on the server and in the browser: without one, the provider renders a hidden `<span>` to find its root
-node, and hydration expects it. `useEnvironmentContext()` returns the root node with its document and window, for an
-app's own code that needs them.
+node, and hydration expects it. `useEnvironmentContext()` returns an accessor to the root node with its document and
+window, for an app's own code that needs them.
 
 ## Tree-shaking
 

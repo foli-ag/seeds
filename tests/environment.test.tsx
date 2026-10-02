@@ -54,7 +54,7 @@ test("resolves the document and window of the root node given as `value`", () =>
   const frame = iframe.contentDocument!
   let environment: EnvironmentContext | undefined
   function Probe() {
-    environment = useEnvironmentContext()
+    environment = useEnvironmentContext()()
     return null
   }
   render(() => (
