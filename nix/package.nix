@@ -57,7 +57,7 @@
           '';
 
           outputHashMode = "recursive";
-          outputHash = "sha256-c1LEXdpsls4btvY2o1ZEV6YySeXTL0UYUNkzYkfjg5k=";
+          outputHash = "sha256-Lw7Fukv5cOFAmGCCV0dSnJD/i0LbARxw/PsdOMvh1QQ=";
         };
 
         # Node runs vite, vitest and tsup, which are written for it. Bun installs and runs the scripts.

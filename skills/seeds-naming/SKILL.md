@@ -46,12 +46,12 @@ everything that lives in an item, without knowing a name beforehand.
 
 Part lists checked against Ark's docs (Dialog, Popover, Select, Combobox, Accordion, Menu, Steps on 2026-09-30;
 TreeView on 2026-10-01). The RadioGroup, NavigationMenu and Slider rows were added when those components were built,
-on 2026-10-01.
+on 2026-10-01. The Drawer rows were added on 2026-10-02, from the parts of `@ark-ui/solid` 5.39.2.
 
 | Ark | seeds |
 |---|---|
 | `Dialog.Trigger` | `Dialog.Trigger` (= `Dialog.Trigger.Open`) |
-| `Dialog.CloseTrigger`, `Popover.CloseTrigger` | `Trigger.Close` |
+| `Dialog.CloseTrigger`, `Popover.CloseTrigger`, `Drawer.CloseTrigger` | `Trigger.Close` |
 | `Select.ClearTrigger`, `Combobox.ClearTrigger` | `Trigger.Clear` |
 | `Menu.ContextTrigger` | `Trigger.Context` |
 | `Steps.PrevTrigger`, `Steps.NextTrigger` | `Trigger.Prev`, `Trigger.Next` |
@@ -71,6 +71,9 @@ on 2026-10-01.
 | `Menu.TriggerItem` (item that opens a submenu) | `Item.Submenu` |
 | `NavigationMenu.ViewportPositioner` | `Viewport.Positioner` |
 | `Slider.HiddenInput`, `Slider.DraggingIndicator`, `Slider.MarkerGroup` | unchanged (rule 6) |
+| `Drawer.GrabberIndicator` | `Grabber.Indicator` |
+| `Drawer.IndentBackground` | `Indent.Background` |
+| `Drawer.SwipeArea`, `Drawer.Stack`, `Drawer.Indent` | unchanged (rules 1 and 6) |
 | `TreeView.BranchControl` | `Branch.Control` |
 | `TreeView.BranchIndicator`, `BranchText`, `BranchTrigger`, `BranchContent` | `Branch.Indicator`, `Branch.Text`, `Branch.Trigger`, `Branch.Content` |
 | `TreeView.BranchIndentGuide` | `Branch.IndentGuide` |
