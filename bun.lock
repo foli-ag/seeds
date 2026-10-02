@@ -24,6 +24,7 @@
         "@zag-js/slider": "1.44.0",
         "@zag-js/steps": "1.44.0",
         "@zag-js/switch": "1.44.0",
+        "@zag-js/toggle": "1.44.0",
         "@zag-js/toggle-group": "1.44.0",
         "@zag-js/types": "1.44.0",
         "@zag-js/utils": "1.44.0",
@@ -298,6 +299,8 @@
     "@zag-js/steps": ["@zag-js/steps@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-mPrUfYQVQlZNVJDUuCxbujNqQn8orH3Fm3S8AQ0AjZxAEMFvFK7Jyzox385c3BWRK6vPkyacgJ7+317PMtps2A=="],
 
     "@zag-js/switch": ["@zag-js/switch@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/focus-visible": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-J4Xk4kK2NmY5CGho8a4AOlcxtJI/it9ITNmmP3ZONdfu3IJGJxs7VCLHfcRc+89iKtqLuD+KB2yaCyZ8lS/tOQ=="],
+
+    "@zag-js/toggle": ["@zag-js/toggle@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-jsy2+e2RAXbBNFfMiF8ibXy05BAmus6/D39XPkdsjX07tn5B29TWJup9ObRzD4WHbCT16Sqn4W3UsczCZoOYUg=="],
 
     "@zag-js/toggle-group": ["@zag-js/toggle-group@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-SFagFoWUBOXMdn6lQCN8qpM3RwTg5ZlhvPTjGudORYcPjIAJAHQTpODWd+ueS9ahrUyDcM7fnLVYusQOMz65KQ=="],
 
