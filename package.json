@@ -64,6 +64,10 @@
       "types": "./dist/popover/index.d.ts",
       "default": "./dist/popover/index.js"
     },
+    "./progress": {
+      "types": "./dist/progress/index.d.ts",
+      "default": "./dist/progress/index.js"
+    },
     "./radio-group": {
       "types": "./dist/radio-group/index.d.ts",
       "default": "./dist/radio-group/index.js"
@@ -119,6 +123,7 @@
     "@zag-js/navigation-menu": "1.44.0",
     "@zag-js/popover": "1.44.0",
     "@zag-js/presence": "1.44.0",
+    "@zag-js/progress": "1.44.0",
     "@zag-js/radio-group": "1.44.0",
     "@zag-js/select": "1.44.0",
     "@zag-js/slider": "1.44.0",

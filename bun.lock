@@ -19,6 +19,7 @@
         "@zag-js/navigation-menu": "1.44.0",
         "@zag-js/popover": "1.44.0",
         "@zag-js/presence": "1.44.0",
+        "@zag-js/progress": "1.44.0",
         "@zag-js/radio-group": "1.44.0",
         "@zag-js/select": "1.44.0",
         "@zag-js/slider": "1.44.0",
@@ -285,6 +286,8 @@
     "@zag-js/popper": ["@zag-js/popper@1.44.0", "", { "dependencies": { "@floating-ui/dom": "^1.7.6", "@zag-js/dom-query": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-uSYqdkGlDC/rCQqYecHAfjhASQjziAR2uiFBjceUK9eG8bjua4Ev6vcaFEjrD4EcOKMMosve5mjWfHcHh5lL6A=="],
 
     "@zag-js/presence": ["@zag-js/presence@1.44.0", "", { "dependencies": { "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/types": "1.44.0" } }, "sha512-8Xc35GDX9o7emuarazpF8bn7suub+37PUoaV/5pVfBrsSAGAJYzoZfXqXHvOguKFJlhQYnFHepiEiPQbmdmZvw=="],
+
+    "@zag-js/progress": ["@zag-js/progress@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-MUghJbYZlU6B9UrSW4ym4OHfwagDcbMhm8jrsWljsRQCMYvVlKjvuHJWVBm7NEzWqnvuEqlAVO66+n3c0hAOrA=="],
 
     "@zag-js/radio-group": ["@zag-js/radio-group@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/focus-visible": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-aSKAir9CoVdivX0KZNfEF/ZXHD9HBPIhnEyg+gHrrzOQg0+Uqj9/ubpf16TRKFjU+p7i1ZzRHi5KK19B52EzHg=="],
 
