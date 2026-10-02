@@ -32,6 +32,10 @@
       "types": "./dist/checkbox/index.d.ts",
       "default": "./dist/checkbox/index.js"
     },
+    "./clipboard": {
+      "types": "./dist/clipboard/index.d.ts",
+      "default": "./dist/clipboard/index.js"
+    },
     "./collapsible": {
       "types": "./dist/collapsible/index.d.ts",
       "default": "./dist/collapsible/index.js"
@@ -109,6 +113,7 @@
     "@zag-js/accordion": "1.44.0",
     "@zag-js/avatar": "1.44.0",
     "@zag-js/checkbox": "1.44.0",
+    "@zag-js/clipboard": "1.44.0",
     "@zag-js/collapsible": "1.44.0",
     "@zag-js/collection": "1.44.0",
     "@zag-js/combobox": "1.44.0",

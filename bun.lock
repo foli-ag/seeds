@@ -9,6 +9,7 @@
         "@zag-js/accordion": "1.44.0",
         "@zag-js/avatar": "1.44.0",
         "@zag-js/checkbox": "1.44.0",
+        "@zag-js/clipboard": "1.44.0",
         "@zag-js/collapsible": "1.44.0",
         "@zag-js/collection": "1.44.0",
         "@zag-js/combobox": "1.44.0",
@@ -251,6 +252,8 @@
     "@zag-js/avatar": ["@zag-js/avatar@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-yMEV/997zBKJXyMo7BKuLJWzGgSS6zuLeo+NRXGEiNFeuBd3rBmBkEOnoc8AAmKfcZXJQSVHAqf7kpOcy1ECyg=="],
 
     "@zag-js/checkbox": ["@zag-js/checkbox@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/focus-visible": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-2Tz2CroVmb8hT7nGknVbf4eW3UmDNZUrA2JoGYlAIQ8jJG3+lmxyFbO83o5RTh4oVeQiTsyn/V+jgLMS6V9z/g=="],
+
+    "@zag-js/clipboard": ["@zag-js/clipboard@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-bGNVGx9JKbFGqRT44H+coCGjRly87tXdF3dsFO9rHy0H1wz7lDJ+QfSGVcozubmDJRdBKrfj13/2BwKcNsdpBA=="],
 
     "@zag-js/collapsible": ["@zag-js/collapsible@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-VPSW2MgFtXSH85GSpfo61LKpW66Rp4v9LsMggp/ITKNj7+HQ5Q8CaWQRhe3FYQdZ9OefaCkC6IFVnIFilE8feQ=="],
 
