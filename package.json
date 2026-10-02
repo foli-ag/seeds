@@ -100,6 +100,10 @@
       "types": "./dist/toggle-group/index.d.ts",
       "default": "./dist/toggle-group/index.js"
     },
+    "./tooltip": {
+      "types": "./dist/tooltip/index.d.ts",
+      "default": "./dist/tooltip/index.js"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
@@ -136,6 +140,7 @@
     "@zag-js/tabs": "1.44.0",
     "@zag-js/toggle": "1.44.0",
     "@zag-js/toggle-group": "1.44.0",
+    "@zag-js/tooltip": "1.44.0",
     "@zag-js/types": "1.44.0",
     "@zag-js/utils": "1.44.0"
   },
