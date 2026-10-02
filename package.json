@@ -64,6 +64,10 @@
       "types": "./dist/navigation-menu/index.d.ts",
       "default": "./dist/navigation-menu/index.js"
     },
+    "./password-input": {
+      "types": "./dist/password-input/index.d.ts",
+      "default": "./dist/password-input/index.js"
+    },
     "./pin-input": {
       "types": "./dist/pin-input/index.d.ts",
       "default": "./dist/pin-input/index.js"
@@ -143,6 +147,7 @@
     "@zag-js/hover-card": "1.44.0",
     "@zag-js/menu": "1.44.0",
     "@zag-js/navigation-menu": "1.44.0",
+    "@zag-js/password-input": "1.44.0",
     "@zag-js/pin-input": "1.44.0",
     "@zag-js/popover": "1.44.0",
     "@zag-js/presence": "1.44.0",
