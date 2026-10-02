@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UseAccordionProps extends Optional<accordion.Props, "id"> {}
+export interface UseAccordionProps extends Optional<Omit<accordion.Props, "getRootNode">, "id"> {}
 
 export type UseAccordionReturn = Accessor<accordion.Api<PropTypes>>
 

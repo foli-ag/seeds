@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UseClipboardProps extends Optional<clipboard.Props, "id"> {}
+export interface UseClipboardProps extends Optional<Omit<clipboard.Props, "getRootNode">, "id"> {}
 
 export type UseClipboardReturn = Accessor<clipboard.Api<PropTypes>>
 

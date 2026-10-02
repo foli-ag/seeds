@@ -17,6 +17,8 @@ under `.claude/` because `skills/` ships in the npm package and this one is for 
 - Model the files on a merged component close to yours: `src/popover/` for anything positioned, `src/steps/` for a
   `Trigger` namespace with no bare form, `src/accordion/` for items with their own context, `src/slider/` for thumbs
   and hidden inputs, `src/select/` for a collection exported next to the component.
+- Type the hook's props as `Optional<Omit<<machine>.Props, "getRootNode">, "id">`, as Ark does. `useService` takes
+  `getRootNode` from the surrounding `EnvironmentProvider`.
 
 ## What a component pull request touches
 
@@ -35,8 +37,8 @@ It does not touch the README, `skills/` or anything under `nix/`: the Nix build 
 Match Ark's parts and behaviour. Where seeds differs, because of Solid 2, because of zag, or because seeds lacks
 something Ark has, say so in the commit under a final "Decisions for review:" list, each with its reason. Common ones:
 
-- Seeds has no Field, locale or environment provider yet, so a hook takes `dir`, `getRootNode` and the ids as plain
-  props where Ark fills them from those providers.
+- Seeds has no Field or locale provider yet, so a hook takes `dir` and the ids as plain props where Ark fills them
+  from those providers.
 - A part zag's anatomy lacks sets `data-scope` and `data-part` itself (naming rule 8).
 - An indicator that shows its children or a `fallback` stays mounted and swaps them only when its state flips, as
   `src/toggle/toggle-indicator.ts` does.
