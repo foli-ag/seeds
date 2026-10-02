@@ -116,6 +116,10 @@
       "types": "./dist/tooltip/index.d.ts",
       "default": "./dist/tooltip/index.js"
     },
+    "./tree-view": {
+      "types": "./dist/tree-view/index.d.ts",
+      "default": "./dist/tree-view/index.js"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
@@ -156,6 +160,7 @@
     "@zag-js/toggle": "1.44.0",
     "@zag-js/toggle-group": "1.44.0",
     "@zag-js/tooltip": "1.44.0",
+    "@zag-js/tree-view": "1.44.0",
     "@zag-js/types": "1.44.0",
     "@zag-js/utils": "1.44.0"
   },
