@@ -46,7 +46,9 @@ everything that lives in an item, without knowing a name beforehand.
 
 Part lists checked against Ark's docs (Dialog, Popover, Select, Combobox, Accordion, Menu, Steps on 2026-09-30;
 TreeView on 2026-10-01). The RadioGroup, NavigationMenu and Slider rows were added when those components were built,
-on 2026-10-01. The Drawer rows were added on 2026-10-02, from the parts of `@ark-ui/solid` 5.39.2.
+on 2026-10-01. The Drawer rows were added on 2026-10-02, from the parts of `@ark-ui/solid` 5.39.2. Toggle, checked on
+2026-10-02 against the parts of `@ark-ui/solid` 5.39.2, has no row: its `Root`, `Indicator` and `Context` keep Ark's
+names.
 
 | Ark | seeds |
 |---|---|

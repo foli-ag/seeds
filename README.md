@@ -74,6 +74,7 @@ or a dev server, which do not tree-shake, load only the components a page import
 | `Slider` | `Slider` | slider |
 | `Steps` | `Stepper` | steps |
 | `Switch` | `Switch` | switch |
+| `Toggle` | none | toggle |
 | `ToggleGroup` | `ToggleGroup` | toggle-group |
 
 Select and Combobox take a collection from `createListCollection`, exported next to them.
