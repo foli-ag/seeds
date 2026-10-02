@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UseNumberInputProps extends Optional<numberInput.Props, "id"> {}
+export interface UseNumberInputProps extends Optional<Omit<numberInput.Props, "getRootNode">, "id"> {}
 
 export type UseNumberInputReturn = Accessor<numberInput.Api<PropTypes>>
 
