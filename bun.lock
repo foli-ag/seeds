@@ -5,7 +5,7 @@
     "": {
       "name": "@foliag/seeds",
       "dependencies": {
-        "@foliag/zag": "^0.1.0",
+        "@foliag/zag": "^0.1.1",
         "@zag-js/accordion": "1.44.0",
         "@zag-js/angle-slider": "1.44.0",
         "@zag-js/avatar": "1.44.0",
@@ -133,7 +133,7 @@
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.12", "", {}, "sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww=="],
 
-    "@foliag/zag": ["@foliag/zag@0.1.0", "", { "dependencies": { "@zag-js/core": "^1.44.0", "@zag-js/types": "^1.44.0", "@zag-js/utils": "^1.44.0" }, "peerDependencies": { "@solidjs/web": "^2.0.0-rc.9", "solid-js": "^2.0.0-rc.9" } }, "sha512-ImGBqVuRvONclxgpk02jfluKH4e0IK9MUoibWMjWB0sB8vp1qdwCdILZMXRc2YApKHyfrhI/4nKdfWMZBvkN5Q=="],
+    "@foliag/zag": ["@foliag/zag@0.1.1", "", { "dependencies": { "@zag-js/core": "^1.44.0", "@zag-js/types": "^1.44.0", "@zag-js/utils": "^1.44.0" }, "peerDependencies": { "@solidjs/web": "^2.0.0-rc.9", "solid-js": "^2.0.0-rc.9" } }, "sha512-VbzX1SILYlPZs90uEb6c5gn52T3hRLzs4hUsAXqHLKOpIHlsSdNaxPHqkUx58qifAXH1YBDyHCdnbZOQOUuyKw=="],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.13", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA=="],
 

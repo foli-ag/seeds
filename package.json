@@ -133,7 +133,7 @@
     "prepublishOnly": "bun run build"
   },
   "dependencies": {
-    "@foliag/zag": "^0.1.0",
+    "@foliag/zag": "^0.1.1",
     "@zag-js/accordion": "1.44.0",
     "@zag-js/angle-slider": "1.44.0",
     "@zag-js/avatar": "1.44.0",
