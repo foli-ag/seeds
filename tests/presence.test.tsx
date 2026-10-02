@@ -1,7 +1,7 @@
 import { render } from "@solidjs/testing-library"
-import { createSignal } from "solid-js"
+import { createSignal, Show } from "solid-js"
 import { page } from "vitest/browser"
-import { Presence, usePresenceContext } from "../src/presence/index.js"
+import { Presence, usePresence, usePresenceContext } from "../src/presence/index.js"
 
 const root = () => document.querySelector<HTMLElement>('[data-scope="presence"][data-part="root"]')
 
@@ -18,7 +18,45 @@ test("shows its children while present and hides them once not", async () => {
   expect(root()?.dataset.state).toBe("closed")
 })
 
-test("keeps its children while their exit animation runs, then unmounts them under unmountOnExit", async () => {
+interface PanelProps {
+  present: boolean
+  onExitComplete: () => void
+}
+
+// An app's own element wired as Ark wires one: presence's attributes, and its ref given apart. The ref reads the
+// presence in a callback because Solid reads a JSX ref untracked.
+function RefPanel(props: PanelProps) {
+  const presence = usePresence(() => ({
+    present: props.present,
+    onExitComplete: props.onExitComplete,
+    unmountOnExit: true,
+  }))
+  return (
+    <Show when={!presence().unmounted}>
+      <div
+        data-scope="presence"
+        data-part="root"
+        hidden={presence().presenceProps.hidden}
+        data-state={presence().presenceProps["data-state"]}
+        ref={(node) => presence().ref(node)}
+      >
+        Panel
+      </div>
+    </Show>
+  )
+}
+
+test.each([
+  [
+    "Presence",
+    (props: PanelProps) => (
+      <Presence present={props.present} unmountOnExit onExitComplete={props.onExitComplete}>
+        Panel
+      </Presence>
+    ),
+  ],
+  ["an element given usePresence's ref", RefPanel],
+])("keeps %s while its exit animation runs, then unmounts it under unmountOnExit", async (_, Panel) => {
   const style = document.createElement("style")
   // A paused animation never ends, so presence waits until the style goes and cancels it
   style.textContent = `
@@ -29,11 +67,7 @@ test("keeps its children while their exit animation runs, then unmounts them und
   onTestFinished(() => style.remove())
   const onExitComplete = vi.fn()
   const [present, setPresent] = createSignal(true)
-  render(() => (
-    <Presence present={present()} unmountOnExit onExitComplete={onExitComplete}>
-      Panel
-    </Presence>
-  ))
+  render(() => <Panel present={present()} onExitComplete={onExitComplete} />)
 
   setPresent(false)
   await expect.poll(() => root()?.dataset.state).toBe("closed")
