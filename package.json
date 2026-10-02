@@ -84,6 +84,10 @@
       "types": "./dist/switch/index.d.ts",
       "default": "./dist/switch/index.js"
     },
+    "./tabs": {
+      "types": "./dist/tabs/index.d.ts",
+      "default": "./dist/tabs/index.js"
+    },
     "./toggle": {
       "types": "./dist/toggle/index.d.ts",
       "default": "./dist/toggle/index.js"
@@ -124,6 +128,7 @@
     "@zag-js/slider": "1.44.0",
     "@zag-js/steps": "1.44.0",
     "@zag-js/switch": "1.44.0",
+    "@zag-js/tabs": "1.44.0",
     "@zag-js/toggle": "1.44.0",
     "@zag-js/toggle-group": "1.44.0",
     "@zag-js/types": "1.44.0",
