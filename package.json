@@ -32,6 +32,10 @@
       "types": "./dist/avatar/index.d.ts",
       "default": "./dist/avatar/index.js"
     },
+    "./carousel": {
+      "types": "./dist/carousel/index.d.ts",
+      "default": "./dist/carousel/index.js"
+    },
     "./checkbox": {
       "types": "./dist/checkbox/index.d.ts",
       "default": "./dist/checkbox/index.js"
@@ -141,6 +145,7 @@
     "@zag-js/accordion": "1.44.0",
     "@zag-js/angle-slider": "1.44.0",
     "@zag-js/avatar": "1.44.0",
+    "@zag-js/carousel": "1.44.0",
     "@zag-js/checkbox": "1.44.0",
     "@zag-js/clipboard": "1.44.0",
     "@zag-js/collapsible": "1.44.0",
