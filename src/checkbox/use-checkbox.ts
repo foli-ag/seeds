@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UseCheckboxProps extends Optional<checkbox.Props, "id"> {}
+export interface UseCheckboxProps extends Optional<Omit<checkbox.Props, "getRootNode">, "id"> {}
 
 export type UseCheckboxReturn = Accessor<checkbox.Api<PropTypes>>
 

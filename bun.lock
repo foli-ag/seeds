@@ -17,6 +17,7 @@
         "@zag-js/combobox": "1.44.0",
         "@zag-js/core": "1.44.0",
         "@zag-js/dialog": "1.44.0",
+        "@zag-js/dom-query": "1.44.0",
         "@zag-js/drawer": "1.44.0",
         "@zag-js/editable": "1.44.0",
         "@zag-js/hover-card": "1.44.0",

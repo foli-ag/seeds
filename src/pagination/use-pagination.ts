@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UsePaginationProps extends Optional<pagination.Props, "id"> {}
+export interface UsePaginationProps extends Optional<Omit<pagination.Props, "getRootNode">, "id"> {}
 
 export type UsePaginationReturn = Accessor<pagination.Api<PropTypes>>
 
