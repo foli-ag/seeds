@@ -60,7 +60,29 @@ or a dev server, which do not tree-shake, load only the components a page import
 The subpaths are listed in `package.json` `exports`, each named after the zag machine the component runs. An alert
 dialog is `<Dialog.Root role="alertdialog">`, as in Ark.
 
-Select and Combobox take a collection from `createListCollection`, exported next to them.
+Select and Combobox take a collection from `createListCollection`, exported next to them. TreeView takes one from
+`createTreeCollection`, exported next to it.
+
+## Shadow roots and iframes
+
+zag finds a component's elements by id in the page's document. A component rendered in a shadow root or an iframe
+cannot find them there, and features that need them, such as moving between tabs with the arrow keys, stop working.
+Wrap that part of the app in `EnvironmentProvider`, as in Ark, and the components inside look up their elements in the
+root node the provider renders in.
+
+```tsx
+import { EnvironmentProvider } from "@foliag/seeds/environment"
+
+<EnvironmentProvider>
+  <App />
+</EnvironmentProvider>
+```
+
+Pass `value`, a root node or a function that returns one, to name the root node yourself. Seeds calls the function only
+when a machine looks up an element, in the browser, so it can return a node the server does not have. Pass the same
+kind of `value` on the server and in the browser: without one, the provider renders a hidden `<span>` to find its root
+node, and hydration expects it. `useEnvironmentContext()` returns an accessor to the root node with its document and
+window, for an app's own code that needs them.
 
 ## Tree-shaking
 

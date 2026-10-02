@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UsePopoverProps extends Optional<popover.Props, "id"> {}
+export interface UsePopoverProps extends Optional<Omit<popover.Props, "getRootNode">, "id"> {}
 
 export type UsePopoverReturn = Accessor<popover.Api<PropTypes>>
 
