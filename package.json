@@ -76,6 +76,10 @@
       "types": "./dist/slider/index.d.ts",
       "default": "./dist/slider/index.js"
     },
+    "./splitter": {
+      "types": "./dist/splitter/index.d.ts",
+      "default": "./dist/splitter/index.js"
+    },
     "./steps": {
       "types": "./dist/steps/index.d.ts",
       "default": "./dist/steps/index.js"
@@ -118,6 +122,7 @@
     "@zag-js/radio-group": "1.44.0",
     "@zag-js/select": "1.44.0",
     "@zag-js/slider": "1.44.0",
+    "@zag-js/splitter": "1.44.0",
     "@zag-js/steps": "1.44.0",
     "@zag-js/switch": "1.44.0",
     "@zag-js/toggle-group": "1.44.0",
