@@ -80,6 +80,10 @@
       "types": "./dist/navigation-menu/index.d.ts",
       "default": "./dist/navigation-menu/index.js"
     },
+    "./number-input": {
+      "types": "./dist/number-input/index.d.ts",
+      "default": "./dist/number-input/index.js"
+    },
     "./pagination": {
       "types": "./dist/pagination/index.d.ts",
       "default": "./dist/pagination/index.js"
@@ -191,6 +195,7 @@
     "@zag-js/hover-card": "1.44.0",
     "@zag-js/menu": "1.44.0",
     "@zag-js/navigation-menu": "1.44.0",
+    "@zag-js/number-input": "1.44.0",
     "@zag-js/pagination": "1.44.0",
     "@zag-js/password-input": "1.44.0",
     "@zag-js/pin-input": "1.44.0",
