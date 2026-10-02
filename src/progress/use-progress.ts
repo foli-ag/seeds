@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UseProgressProps extends Optional<progress.Props, "id"> {}
+export interface UseProgressProps extends Optional<Omit<progress.Props, "getRootNode">, "id"> {}
 
 export type UseProgressReturn = Accessor<progress.Api<PropTypes>>
 
