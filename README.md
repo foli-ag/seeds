@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/banner-dark.webp">
+  <img alt="@foliag/seeds" src=".github/banner-light.webp">
+</picture>
+
 # @foliag/seeds
 
 Unstyled Solid 2 components built on [Zag.js](https://zagjs.com) machines through
