@@ -4,7 +4,7 @@ import { createMemo, type Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useService } from "../utils/use-api.js"
 
-export interface UseMenuProps extends Optional<Omit<menu.Props, "getRootNode">, "id"> {}
+export interface UseMenuProps extends Optional<Omit<menu.Props, "dir" | "getRootNode">, "id"> {}
 
 export interface UseMenuReturn {
   api: Accessor<menu.Api<PropTypes>>

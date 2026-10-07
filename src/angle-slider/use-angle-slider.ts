@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UseAngleSliderProps extends Optional<Omit<angleSlider.Props, "getRootNode">, "id"> {}
+export interface UseAngleSliderProps extends Optional<Omit<angleSlider.Props, "dir" | "getRootNode">, "id"> {}
 
 export type UseAngleSliderReturn = Accessor<angleSlider.Api<PropTypes>>
 

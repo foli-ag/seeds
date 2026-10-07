@@ -72,6 +72,10 @@
       "types": "./dist/hover-card/index.d.ts",
       "default": "./dist/hover-card/index.js"
     },
+    "./locale": {
+      "types": "./dist/locale/index.d.ts",
+      "default": "./dist/locale/index.js"
+    },
     "./menu": {
       "types": "./dist/menu/index.d.ts",
       "default": "./dist/menu/index.js"
@@ -193,6 +197,7 @@
     "@zag-js/drawer": "1.44.0",
     "@zag-js/editable": "1.44.0",
     "@zag-js/hover-card": "1.44.0",
+    "@zag-js/i18n-utils": "1.44.0",
     "@zag-js/menu": "1.44.0",
     "@zag-js/navigation-menu": "1.44.0",
     "@zag-js/number-input": "1.44.0",

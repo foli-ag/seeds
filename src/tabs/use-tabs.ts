@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UseTabsProps extends Optional<Omit<tabs.Props, "getRootNode">, "id"> {}
+export interface UseTabsProps extends Optional<Omit<tabs.Props, "dir" | "getRootNode">, "id"> {}
 
 export type UseTabsReturn = Accessor<tabs.Api<PropTypes>>
 

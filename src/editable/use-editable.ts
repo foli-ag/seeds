@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UseEditableProps extends Optional<Omit<editable.Props, "getRootNode">, "id"> {}
+export interface UseEditableProps extends Optional<Omit<editable.Props, "dir" | "getRootNode">, "id"> {}
 
 export type UseEditableReturn = Accessor<editable.Api<PropTypes>>
 

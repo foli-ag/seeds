@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UseRadioGroupProps extends Optional<Omit<radioGroup.Props, "getRootNode">, "id"> {}
+export interface UseRadioGroupProps extends Optional<Omit<radioGroup.Props, "dir" | "getRootNode">, "id"> {}
 
 export type UseRadioGroupReturn = Accessor<radioGroup.Api<PropTypes>>
 

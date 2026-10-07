@@ -21,6 +21,7 @@
         "@zag-js/drawer": "1.44.0",
         "@zag-js/editable": "1.44.0",
         "@zag-js/hover-card": "1.44.0",
+        "@zag-js/i18n-utils": "1.44.0",
         "@zag-js/menu": "1.44.0",
         "@zag-js/navigation-menu": "1.44.0",
         "@zag-js/number-input": "1.44.0",
@@ -301,6 +302,8 @@
     "@zag-js/focus-visible": ["@zag-js/focus-visible@1.44.0", "", { "dependencies": { "@zag-js/dom-query": "1.44.0" } }, "sha512-uw/MjetjFP16IiOQLr3snfnEd5772lXPuQR8mct432t4AyPEAskZBwO9MTDbWukNXQ20VKpcorMZm+QXG3NY4g=="],
 
     "@zag-js/hover-card": ["@zag-js/hover-card@1.44.0", "", { "dependencies": { "@zag-js/anatomy": "1.44.0", "@zag-js/core": "1.44.0", "@zag-js/dismissable": "1.44.0", "@zag-js/dom-query": "1.44.0", "@zag-js/popper": "1.44.0", "@zag-js/types": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-tVp81zAl97iYYaJYnsTl7OnTzCFZLFZifVo7gORk9VjD1Iw2px1/vfNNO8HpTTiXQZiGQWx3VOWTf7fEiWjr+w=="],
+
+    "@zag-js/i18n-utils": ["@zag-js/i18n-utils@1.44.0", "", { "dependencies": { "@zag-js/dom-query": "1.44.0" } }, "sha512-UGYpkpnEowFqeBkSIw4dtRJCf5O/4JH3eDT0BXKFHMFAptwCM/4+lHD8dnxkUgjFN8H5OELUtBWZDrM71VlrcA=="],
 
     "@zag-js/interact-outside": ["@zag-js/interact-outside@1.44.0", "", { "dependencies": { "@zag-js/dom-query": "1.44.0", "@zag-js/utils": "1.44.0" } }, "sha512-yFX3eHamp82kax65xIYLemXNH8kD9MvXm7lHttnwlp/XZoAgDTR2l+iLJYU6pLZsuSM9GsrnWQrfHaHWBhyNWw=="],
 

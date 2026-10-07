@@ -6,7 +6,7 @@ import { access, type MaybeAccessor, type Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
 export interface UseCollapsibleProps
-  extends Optional<Omit<collapsible.Props, "getRootNode">, "id">,
+  extends Optional<Omit<collapsible.Props, "dir" | "getRootNode">, "id">,
     RenderStrategyProps {}
 
 export interface CollapsibleApi extends collapsible.Api<PropTypes> {

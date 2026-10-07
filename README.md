@@ -89,6 +89,24 @@ kind of `value` on the server and in the browser: without one, the provider rend
 node, and hydration expects it. `useEnvironmentContext()` returns an accessor to the root node with its document and
 window, for an app's own code that needs them.
 
+## Locale and direction
+
+zag reads and writes numbers in "en-US" and lays components out left to right. Wrap the app in `LocaleProvider`, as in
+Ark, and the components inside take its locale and the direction of its script: a number input reads "2,5" as 2.5
+under "fr-FR", a progress writes "50 %", and tabs move with the arrow keys from right to left under "ar-EG".
+
+```tsx
+import { LocaleProvider } from "@foliag/seeds/locale"
+
+<LocaleProvider locale="fr-FR">
+  <App />
+</LocaleProvider>
+```
+
+A `locale` passed to a number input or a progress wins over the provider's. The hooks take no `dir`: it follows the
+locale. zag's number input reads the locale only when `formatOptions` is set, and otherwise parses with `parseFloat`.
+`useLocaleContext()` returns an accessor to the locale and its direction, for an app's own formatting.
+
 ## Tree-shaking
 
 The build compiles each source file to its own module, so an app's bundler keeps only the parts it uses.

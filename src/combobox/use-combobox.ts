@@ -6,7 +6,7 @@ import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
 export interface UseComboboxProps<T extends CollectionItem = any>
-  extends Optional<Omit<combobox.Props<T>, "getRootNode">, "id"> {}
+  extends Optional<Omit<combobox.Props<T>, "dir" | "getRootNode">, "id"> {}
 
 export type UseComboboxReturn<T extends CollectionItem = any> = Accessor<combobox.Api<PropTypes, T>>
 

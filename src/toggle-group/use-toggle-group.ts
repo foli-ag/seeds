@@ -4,7 +4,7 @@ import type { Accessor } from "solid-js"
 import type { MaybeAccessor, Optional } from "../utils/types.js"
 import { useApi } from "../utils/use-api.js"
 
-export interface UseToggleGroupProps extends Optional<Omit<toggleGroup.Props, "getRootNode">, "id"> {}
+export interface UseToggleGroupProps extends Optional<Omit<toggleGroup.Props, "dir" | "getRootNode">, "id"> {}
 
 export type UseToggleGroupReturn = Accessor<toggleGroup.Api<PropTypes>>
 

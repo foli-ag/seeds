@@ -4,6 +4,7 @@ import type { NormalizeProps } from "@zag-js/types"
 import { compact } from "@zag-js/utils"
 import { createMemo, createUniqueId, type Accessor } from "solid-js"
 import { useEnvironmentContext } from "../environment/use-environment-context.js"
+import { useLocaleContext } from "../locale/use-locale-context.js"
 import { access, type MaybeAccessor } from "./types.js"
 
 /**
@@ -23,17 +24,21 @@ export function useApi<S extends MachineSchema, A>(
 
 /**
  * Runs `machine` with a generated id unless `props` has one, looking up its elements in the root node of the
- * surrounding `EnvironmentProvider`
+ * surrounding `EnvironmentProvider`, in the locale and direction of the surrounding `LocaleProvider`
  */
 export function useService<S extends MachineSchema>(machine: Machine<S>, props: MaybeAccessor<object>): Service<S> {
   const id = createUniqueId()
   const environment = useEnvironmentContext()
+  const locale = useLocaleContext()
   // `compact` drops props passed as undefined, which would otherwise override the generated id
   return useMachine(
     machine,
     () =>
       ({
         id,
+        dir: locale().dir,
+        // Only the machines that format numbers read it. A `locale` in `props` wins.
+        locale: locale().locale,
         getRootNode: environment().getRootNode,
         ...compact(access(props) as Record<string, unknown>),
       }) as Partial<S["props"]>,
