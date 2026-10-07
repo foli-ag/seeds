@@ -1,6 +1,6 @@
 {
   "name": "@foliag/seeds",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Solid 2 component library built on Zag.js",
   "keywords": [
     "solid",
